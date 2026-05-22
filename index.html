@@ -1,4 +1,4 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -545,7 +545,7 @@
 
     .modal-content {
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
       background: linear-gradient(180deg, #0f0f0f, #080808);
       border: 1px solid rgba(212,175,55,0.2);
       border-radius: 24px;
@@ -615,6 +615,43 @@
       background-position: left 18px center;
     }
 
+    /* ========== حقل الهاتف مع نداء الدولة ========== */
+    .phone-group {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .phone-group select {
+      width: 130px;
+      min-width: 130px;
+      flex-shrink: 0;
+      padding: 14px 12px;
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 14px;
+      color: white;
+      font-family: 'Cairo', sans-serif;
+      font-size: 14px;
+      transition: 0.3s;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23d4af37' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 10px center;
+      cursor: pointer;
+    }
+
+    .phone-group select:focus {
+      border-color: #d4af37;
+      outline: none;
+      box-shadow: 0 0 20px rgba(212,175,55,0.1);
+      background-color: #0f0f0f;
+    }
+
+    .phone-group input {
+      flex: 1;
+    }
+
     .btn-modal-submit {
       width: 100%;
       padding: 15px;
@@ -662,6 +699,7 @@
       .section { padding: 80px 5%; }
       .modal-content { padding: 28px 20px; margin: 10px; max-width: 95%; }
       .modal-title { font-size: 20px; }
+      .phone-group select { width: 110px; min-width: 110px; font-size: 13px; }
     }
   </style>
 </head>
@@ -762,9 +800,10 @@
       <div class="footer-col"><h4>روابط سريعة</h4><a href="#">الرئيسية</a><a href="#">خدماتنا</a><a href="#">عن الوكالة</a><a href="#">اتصل بنا</a></div>
       <div class="footer-col"><h4>تواصل معنا</h4><a href="https://wa.me/963986148756"><i class="fab fa-whatsapp"></i> واتساب</a><a href="https://www.instagram.com/lumora.growth.agency?igsh=Mzc3eHM5NzBnaTZy" target="_blank"><i class="fab fa-instagram"></i> الوكالة</a><a href="https://www.instagram.com/hatem_dayob?igsh=MWN2ZDEwMzFkenQzcA==" target="_blank"><i class="fas fa-user-tie"></i> المؤسس</a></div>
     </div>
-    <div class="footer-bottom">© 2025 Lumora Growth Agency -- جميع الحقوق محفوظة | Premium Legal Marketing Systems</div>
+    <div class="footer-bottom">© 2025 Lumora Growth Agency — جميع الحقوق محفوظة | Premium Legal Marketing Systems</div>
   </footer>
 
+  <!-- ========== نافذة الاستشارة المنبثقة ========== -->
   <div class="modal-overlay" id="consultationModal">
     <div class="modal-content" id="modalContent">
       <button class="modal-close" onclick="closeConsultationModal()">✕</button>
@@ -775,9 +814,64 @@
         <form class="modal-form" id="modalForm">
           <div class="form-group"><input type="text" id="modalName" placeholder="الاسم الكامل *" required></div>
           <div class="form-group"><input type="text" id="modalFirm" placeholder="اسم مكتب المحاماة *" required></div>
-          <div class="form-group"><select id="modalSpecialty" required><option value="">التخصص القانوني *</option><option>قضايا الطلاق والأسرة</option><option>الهجرة والجنسية</option><option>الإصابات والحوادث</option><option>القضايا الجنائية</option><option>قانون الشركات</option><option>تجاري وعقود</option><option>آخر</option></select></div>
+          <div class="form-group">
+            <select id="modalSpecialty" required>
+              <option value="">التخصص القانوني *</option>
+              <option>قضايا الطلاق والأسرة</option>
+              <option>الهجرة والجنسية</option>
+              <option>الإصابات والحوادث</option>
+              <option>القضايا الجنائية</option>
+              <option>قانون الشركات</option>
+              <option>تجاري وعقود</option>
+              <option>آخر</option>
+            </select>
+          </div>
           <div class="form-group"><input type="text" id="modalCountry" placeholder="الدولة / المدينة *" required></div>
-          <div class="form-group"><input type="tel" id="modalPhone" placeholder="رقم الهاتف مع رمز الدولة *" required></div>
+
+          <!-- ========== حقل الهاتف مع نداء الدولة ========== -->
+          <div class="form-group">
+            <label style="display:block;color:#999;font-size:13px;margin-bottom:6px;">رقم الهاتف *</label>
+            <div class="phone-group">
+              <select id="countryCode" required>
+                <option value="">اختر الدولة</option>
+                <option value="+966">🇸🇦 السعودية +966</option>
+                <option value="+20">🇪🇬 مصر +20</option>
+                <option value="+971">🇦🇪 الإمارات +971</option>
+                <option value="+974">🇶🇦 قطر +974</option>
+                <option value="+965">🇰🇼 الكويت +965</option>
+                <option value="+968">🇴🇲 عمان +968</option>
+                <option value="+973">🇧🇭 البحرين +973</option>
+                <option value="+962">🇯🇴 الأردن +962</option>
+                <option value="+961">🇱🇧 لبنان +961</option>
+                <option value="+963">🇸🇾 سوريا +963</option>
+                <option value="+970">🇵🇸 فلسطين +970</option>
+                <option value="+964">🇮🇶 العراق +964</option>
+                <option value="+967">🇾🇪 اليمن +967</option>
+                <option value="+216">🇹🇳 تونس +216</option>
+                <option value="+213">🇩🇿 الجزائر +213</option>
+                <option value="+212">🇲🇦 المغرب +212</option>
+                <option value="+218">🇱🇾 ليبيا +218</option>
+                <option value="+249">🇸🇩 السودان +249</option>
+                <option value="+252">🇸🇴 الصومال +252</option>
+                <option value="+90">🇹🇷 تركيا +90</option>
+                <option value="+1">🇺🇸 أمريكا +1</option>
+                <option value="+44">🇬🇧 بريطانيا +44</option>
+                <option value="+33">🇫🇷 فرنسا +33</option>
+                <option value="+49">🇩🇪 ألمانيا +49</option>
+                <option value="+61">🇦🇺 أستراليا +61</option>
+                <option value="+81">🇯🇵 اليابان +81</option>
+                <option value="+86">🇨🇳 الصين +86</option>
+                <option value="+91">🇮🇳 الهند +91</option>
+                <option value="+92">🇵🇰 باكستان +92</option>
+                <option value="+60">🇲🇾 ماليزيا +60</option>
+                <option value="+62">🇮🇩 إندونيسيا +62</option>
+                <option value="+234">🇳🇬 نيجيريا +234</option>
+                <option value="+27">🇿🇦 جنوب أفريقيا +27</option>
+              </select>
+              <input type="tel" id="modalPhone" placeholder="أدخل رقم هاتفك *" required>
+            </div>
+          </div>
+
           <div class="form-group"><input type="email" id="modalEmail" placeholder="البريد الإلكتروني *" required></div>
           <button type="submit" class="btn-modal-submit" id="modalSubmitBtn">🚀 أرسل الطلب</button>
         </form>
@@ -791,6 +885,7 @@
     </div>
   </div>
 
+  <!-- أزرار عائمة -->
   <div style="position:fixed;bottom:20px;left:20px;z-index:9999;display:flex;flex-direction:column;gap:10px;">
     <button onclick="openConsultationModal()" class="btn btn-primary pulse" style="font-size:14px;">⚡ استشارة مجانية</button>
     <a href="https://wa.me/963986148756?text=مرحباً،%20أرغب%20بطلب%20استشارة%20فورية" target="_blank" style="background:#111;color:#d4af37;padding:12px 18px;border-radius:50px;text-decoration:none;font-weight:bold;border:2px solid rgba(212,175,55,0.3);text-align:center;font-size:14px;"><i class="fab fa-whatsapp"></i> واتساب</a>
@@ -855,12 +950,16 @@
       submitBtn.disabled = true;
       submitBtn.innerHTML = '⏳ جاري الإرسال...';
 
+      const countryCode = document.getElementById('countryCode').value;
+      const phoneNumber = document.getElementById('modalPhone').value.trim();
+      const fullPhone = countryCode + phoneNumber;
+
       const data = {
         name: document.getElementById('modalName').value.trim(),
         firm: document.getElementById('modalFirm').value.trim(),
         specialty: document.getElementById('modalSpecialty').value,
         country: document.getElementById('modalCountry').value.trim(),
-        phone: document.getElementById('modalPhone').value.trim(),
+        phone: fullPhone,
         email: document.getElementById('modalEmail').value.trim(),
         details: ''
       };
@@ -890,4 +989,4 @@
     });
   </script>
 </body>
-</html>
+                                                                                                                                                                                                </html>
