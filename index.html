@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lumora Growth Agency | وكالة تسويق قانوني متخصصة</title>
-  <meta name="description" content="وكالة Lumora المتخصصة في جلب العملاء لمكاتب المحاماة عبر أنظمة Meta Ads احترافية. استشارات قانونية مؤهلة وعملاء حقيقيين." />
+  <title>Lumora Growth Agency | وكالة تسويق قانوني متخصصة في إعلانات ميتا</title>
+  <meta name="description" content="وكالة Lumora المتخصصة حصرياً في إعلانات ميتا (فيسبوك وإنستغرام) لمكاتب المحاماة. نحملك العملاء القانونيين المؤهلين عبر استهداف دقيق." />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
@@ -133,12 +133,14 @@
     }
 
     .hero-content {
-      max-width: 900px;
+      max-width: 950px;
       text-align: center;
     }
 
     .premium-badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       padding: 12px 24px;
       border: 1px solid rgba(212,175,55,0.3);
       border-radius: 50px;
@@ -147,6 +149,10 @@
       background: rgba(212,175,55,0.06);
       font-size: 14px;
       letter-spacing: 1px;
+    }
+
+    .premium-badge i {
+      font-size: 16px;
     }
 
     h1 {
@@ -188,6 +194,9 @@
       transition: 0.35s ease;
       cursor: pointer;
       font-family: 'Cairo', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .btn-primary {
@@ -352,7 +361,7 @@
     .cards {
       margin-top: 70px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
     }
 
@@ -463,6 +472,14 @@
       color: #d4af37;
       margin-bottom: 10px;
       font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-item h3 i {
+      font-size: 18px;
+      color: #d4af37;
     }
 
     .faq-item p {
@@ -529,6 +546,7 @@
     .footer-col h4 { color: #d4af37; margin-bottom: 20px; }
     .footer-col p, .footer-col a { color: #777; font-size: 14px; text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
     .footer-col a:hover { color: #d4af37; }
+    .footer-col a i { margin-left: 8px; width: 20px; }
     .footer-bottom { text-align: center; color: #555; font-size: 13px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); }
 
     .modal-overlay {
@@ -582,7 +600,7 @@
     }
 
     .modal-close:hover { background: rgba(212,175,55,0.1); border-color: #d4af37; }
-    .modal-icon { text-align: center; font-size: 40px; margin-bottom: 12px; }
+    .modal-icon { text-align: center; font-size: 40px; margin-bottom: 12px; color: #d4af37; }
     .modal-title { font-size: 24px; color: #d4af37; text-align: center; margin-bottom: 6px; font-weight: 800; }
     .modal-subtitle { text-align: center; color: #999; font-size: 13px; margin-bottom: 25px; line-height: 1.7; }
     .modal-form .form-group { margin-bottom: 12px; }
@@ -615,7 +633,6 @@
       background-position: left 18px center;
     }
 
-    /* ========== حقل الهاتف مع نداء الدولة ========== */
     .phone-group {
       display: flex;
       gap: 10px;
@@ -666,6 +683,10 @@
       font-family: 'Cairo', sans-serif;
       margin-top: 10px;
       letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
     .btn-modal-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(212,175,55,0.35); }
@@ -690,6 +711,54 @@
 
     .pulse { animation: pulse 2s infinite; }
 
+    .services-highlight {
+      background: linear-gradient(135deg, rgba(212,175,55,0.05), rgba(212,175,55,0.02));
+      border-radius: 30px;
+      padding: 50px;
+      margin-top: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 16px;
+      transition: 0.3s;
+    }
+
+    .service-item:hover {
+      background: rgba(212,175,55,0.05);
+      transform: translateX(-5px);
+    }
+
+    .service-icon {
+      font-size: 32px;
+      color: #d4af37;
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .service-text h4 {
+      color: #d4af37;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .service-text p {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
     @media(max-width: 768px) {
       h1 { font-size: 36px; }
       .section-title { font-size: 30px; }
@@ -700,6 +769,7 @@
       .modal-content { padding: 28px 20px; margin: 10px; max-width: 95%; }
       .modal-title { font-size: 20px; }
       .phone-group select { width: 110px; min-width: 110px; font-size: 13px; }
+      .services-highlight { padding: 30px 20px; }
     }
   </style>
 </head>
@@ -717,11 +787,14 @@
 
   <section class="hero">
     <div class="hero-content">
-      <div class="premium-badge">🏛️ وكالة تسويق قانوني متخصصة</div>
-      <h1 id="mainTitle">نحوّل مكاتب المحاماة إلى <span class="gold">علامات قانونية رائدة</span> تجذب عملاء مميزين</h1>
-      <p id="mainDesc">في <strong>Lumora Growth Agency</strong> لا نكتفي بالإعلانات التقليدية. نبني أنظمة تسويق قانوني متكاملة تجمع بين <span class="gold">استراتيجيات Meta Ads الذكية</span>، بناء الهوية الرقمية، وتحسين تجربة العميل لضمان تدفق مستمر من <strong>الاستشارات القانونية المؤهلة والعملاء الحقيقيين</strong> لمكتبك.</p>
+      <div class="premium-badge">
+        <i class="fab fa-meta"></i>
+        <span>متخصصون في إعلانات ميتا للمحامين</span>
+      </div>
+      <h1 id="mainTitle">نحوّل مكاتب المحاماة إلى <span class="gold">علامات قانونية رائدة</span><br>عبر إعلانات فيسبوك وإنستغرام</h1>
+      <p id="mainDesc">في <strong>Lumora Growth Agency</strong>، لا نؤمن بالصدفة أو الحظ. نؤمن بالاستراتيجيات المدروسة والبيانات الدقيقة. تخصصنا الوحيد هو <span class="gold">إعلانات ميتا (Meta Ads)</span> للمحامين، حيث نستخدم تقنيات استهداف متقدمة جداً لنصل إلى عملائك المحتملين في اللحظة المناسبة، بالرسالة المناسبة، وعلى المنصة التي يقضون فيها معظم أوقاتهم. نحن لا نبيعك مشاهدات أو إعجابات... نبيعك <strong>استشارات قانونية مؤهلة وعملاء يوقعون عقوداً</strong>.</p>
       <div class="cta-group">
-        <button onclick="openConsultationModal()" class="btn btn-primary pulse">⚡ احجز استشارتك المجانية</button>
+        <button onclick="openConsultationModal()" class="btn btn-primary pulse"><i class="fas fa-calendar-check"></i> احجز استشارتك المجانية</button>
         <a href="https://wa.me/963986148756?text=مرحباً،%20أرغب%20بطلب%20استشارة%20فورية" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> واتساب فوري</a>
       </div>
     </div>
@@ -729,23 +802,84 @@
 
   <section class="section section-dark">
     <h2 class="section-title" id="whyDifferentTitle">لماذا Lumora مختلفة؟</h2>
-    <p class="section-subtitle" id="whyDifferentSubtitle">لسنا مجرد وكالة إعلانات... نحن شركاء نمو حقيقيون لمكتبك</p>
-    <p class="section-text" id="whyDifferentDesc">معظم وكالات التسويق تركّز على المقاييس السطحية؛ عدد المشاهدات، الإعجابات، والتعليقات. لكن في <strong>Lumora</strong>، نركّز على ما يهمّك فعلاً: <span class="gold">عدد الاستشارات القانونية الحقيقية، جودة العملاء المحتملين، وقيمة القضايا الموقّعة</span>. نستخدم أنظمة Meta Ads متقدمة، رسائل تسويقية مقنعة، وتصاميم تعكس هيبة مكتبك القانوني لضمان تحويل الزوار إلى عملاء دائمين.</p>
+    <p class="section-subtitle" id="whyDifferentSubtitle">تخصصنا 100% في إعلانات ميتا... لا نوزع جهودنا على منصات أخرى</p>
+    <p class="section-text" id="whyDifferentDesc">معظم وكالات التسويق تشتت جهودها بين جوجل، تيك توك، لينكد إن، وتويتر. والنتيجة؟ حملات ضعيفة، ميزانيات مهدرة، وعملاء محتملون منخفضو الجودة. في <strong>Lumora</strong>، قررنا أن نكون الأفضل في مجال واحد بدلاً من أن نكون متوسطين في مجالات عدة. <span class="gold">تركيزنا حصري على فيسبوك وإنستغرام</span> لأننا نؤمن أن العملاء القانونيين موجودين هناك. نعرف بالضبط كيف نستهدفهم: حسب موقعهم، مهنتهم، اهتماماتهم القانونية، سلوكهم الشرائي، وحتى تفاعلهم مع صفحات المنافسين. نحن لا نرمي الشبكة وننتظر... نحن نصطاد بدقة جراحية.</p>
 
     <div class="cards">
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-bullseye"></i></div></div><h3>استهداف دقيق</h3><p>نصل إلى الأشخاص الذين يبحثون فعلياً عن خدمات قانونية في تخصصك، لضمان وصول إعلاناتك للعميل المناسب في الوقت المناسب وبدون إهدار للميزانية.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-gem"></i></div></div><h3>هوية قانونية فاخرة</h3><p>نصمم حضوراً رقمياً يعكس قوة مكتبك وهيبتك القانونية، مما يبني الثقة مع العملاء المحتملين قبل أول اتصال هاتفي أو زيارة.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-chart-line"></i></div></div><h3>أنظمة تحويل ذكية</h3><p>من أول نقرة على الإعلان حتى توقيع العقد، نصمم رحلة عميل سلسة تزيد من معدل التحويل وتقلل تكلفة اكتساب العميل بشكل ملحوظ.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-shield-alt"></i></div></div><h3>خصوصية وأمان</h3><p>نلتزم بأعلى معايير الخصوصية في التعامل مع بيانات العملاء، بما يتوافق تماماً مع أخلاقيات المهنة القانونية وحماية المعلومات.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-chart-pie"></i></div></div><h3>تقارير شفافة</h3><p>نقدم تقارير دورية مفصلة توضح بدقة أداء حملاتك الإعلانية وعدد العملاء المحتملين وتكلفة كل عميل.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-headset"></i></div></div><h3>دعم مستمر</h3><p>فريقنا المتخصص متاح للإجابة على استفساراتك وتعديل الاستراتيجيات حسب تطور احتياجات مكتبك القانوني ونموه.</p></div>
+      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fab fa-meta"></i></div></div><h3>تخصصنا في إعلانات ميتا</h3><p>نحن لا نعمل على جوجل أو أي منصات أخرى. <strong class="gold">تخصصنا الوحيد هو إعلانات فيسبوك وإنستغرام (Meta Ads)</strong> للمحامين. نعرف بالضبط كيف نصل لعملائك المحتملين من خلال استهداف دقيق جداً. هذه ليست مجرد خدمة إضافية لنا... هذا هو كل ما نفعله، ولهذا نحن الأفضل فيه.</p></div>
+      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-bullseye"></i></div></div><h3>استهداف دقيق جداً</h3><p>لا نضيّع ميزانيتك على أشخاص غير مهتمين. نصل إلى الأشخاص الذين يبحثون فعلياً عن خدمات قانونية في تخصصك. نستهدفهم بالموقع الجغرافي، المهنة، الاهتمامات القانونية، السلوك الشرائي، وحتى الشركات التي يعملون بها.</p></div>
+      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-gem"></i></div></div><h3>هوية قانونية فاخرة</h3><p>المظهر الاحترافي ليس رفاهية... إنه ضرورة لبناء الثقة. نصمم إعلانات وصفحات هبوط وهوية رقمية تعكس قوة مكتبك وهيبتك القانونية، مما يجعل العميل يشعر أنه أمام مكتب محاماة كبير قبل أول اتصال.</p></div>
+      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-chart-line"></i></div></div><h3>أنظمة تحويل ذكية</h3><p>الإعلان الجيد يجلب الزوار... لكن النظام الذكي يحولهم إلى عملاء. من أول نقرة على الإعلان، مروراً بصفحة الهبوط، وصولاً إلى نموذج الحجز والمكالمة الهاتفية، نصمم كل خطوة لزيادة معدل التحويل وتقليل تكلفة اكتساب العميل.</p></div>
+      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-chart-pie"></i></div></div><h3>تقارير شفافة</h3><p>نحن لا نخفي شيئاً عنك. نقدم تقارير دورية مفصلة توضح بدقة: كم أنفقت، كم استشارة حصلت، كم كلفتك كل استشارة، وأي إعلان يحقق أفضل أداء. أنت تتحكم بالقرار، ونحن ننفذ.</p></div>
+      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-headset"></i></div></div><h3>دعم مستمر</h3><p>فريقنا المتخصص ليس بعيداً عنك. نحن متاحون للإجابة على استفساراتك، تعديل الاستراتيجيات، وتحسين الأداء بناءً على تطور احتياجات مكتبك ونموه. أنت لست مجرد عميل... أنت شريك.</p></div>
+    </div>
+
+    <!-- ========== قسم الخدمات الجديد ========== -->
+    <div class="services-highlight">
+      <h3 style="text-align: center; color: #d4af37; font-size: 28px; margin-bottom: 20px;"><i class="fas fa-cogs"></i> خدماتنا المتكاملة</h3>
+      <p style="text-align: center; color: #999; margin-bottom: 30px;">نحن لا نقدم مجرد إعلانات... نقدم منظومة تسويق قانوني متكاملة</p>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-icon"><i class="fab fa-meta"></i></div>
+          <div class="service-text">
+            <h4>إدارة حملات إعلانات ميتا</h4>
+            <p>تخطيط، إنشاء، إدارة، وتحسين حملات إعلانات فيسبوك وإنستغرام بشكل يومي لضمان أفضل عائد استثمار وأقل تكلفة لكل عميل.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <div class="service-text">
+            <h4>تصميم وإدارة الصفحات</h4>
+            <p>تصميم احترافي لصفحات فيسبوك وإنستغرام تعكس هوية مكتبك القانونية، مع إدارة يومية للمحتوى والرد على الاستفسارات وبناء الثقة.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="service-text">
+            <h4>تصميم صفحات هبوط</h4>
+            <p>صفحات هبوط مصممة خصيصاً للتحويل، تشرح خدماتك القانونية بطريقة مقنعة وتحث الزائر على ترك بياناته وطلب استشارة.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-chart-simple"></i></div>
+          <div class="service-text">
+            <h4>تحليل البيانات والتقارير</h4>
+            <p>تقارير أسبوعية وشهرية مفصلة توضح أداء كل حملة، عدد العملاء المحتملين، تكلفة الاستشارة، وأهم المؤشرات.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="service-text">
+            <h4>نظام تأهيل العملاء</h4>
+            <p>نقوم بتصفية العملاء المحتملين قبل وصولهم إليك عبر أسئلة ذكية في الإعلان ونموذج الحجز، لتتلقى فقط استشارات جدية.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
+          <div class="service-text">
+            <h4>استشارات تسويق قانوني</h4>
+            <p>جلسات استراتيجية مع خبرائنا لوضع خطة تسويق قانونية متكاملة تناسب تخصص مكتبك وسوقك المستهدف.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section">
-    <h2 class="section-title" id="smartMarketingTitle">التسويق القانوني الذكي</h2>
-    <p class="section-subtitle" id="smartMarketingSubtitle">استثمر في نمو مكتبك بطريقة احترافية</p>
-    <p class="section-text" id="smartMarketingDesc">في عالم تزداد فيه المنافسة يومًا بعد يوم، لم يعد الاعتماد على السمعة الشخصية أو الإحالات التقليدية كافياً لنمو مكتب المحاماة. <span class="gold">التسويق القانوني المتخصص</span> هو المفتاح لضمان تدفق ثابت من العملاء ذوي القيمة العالية. في Lumora، نمزج بين <strong>فهم السوق القانوني</strong>، <strong>تقنيات Meta Ads المتقدمة</strong>، و<strong>استراتيجيات بناء العلامة التجارية</strong> لنصنع لك حضوراً قانونياً مهيباً يجذب العملاء المناسبين ويحولهم إلى قضايا حقيقية.</p>
+    <h2 class="section-title" id="smartMarketingTitle"><i class="fab fa-meta"></i> إعلانات ميتا للمحامين</h2>
+    <p class="section-subtitle" id="smartMarketingSubtitle">تخصصنا 100% في فيسبوك وإنستغرام لاستهداف العملاء القانونيين</p>
+    <p class="section-text" id="smartMarketingDesc">
+      في <strong>Lumora</strong> لا نشتت جهودنا. تركيزنا حصري على <span class="gold">منصة ميتا (فيسبوك + إنستغرام)</span> لأنها المكان الذي يقضي فيه عملاؤك المحتملون وقتهم. هل تعلم أن مستخدم فيسبوك العادي يقضي أكثر من 40 دقيقة يومياً على المنصة؟ هذا يعني أن لديك نافذة ذهبية للوصول إليه.
+      <br><br>
+      <strong>تقنيات الاستهداف المتقدمة التي نستخدمها:</strong><br>
+      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف الأشخاص الذين تفاعلوا مع صفحات قانونية مشابهة<br>
+      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف الموظفين في الشركات والمؤسسات الكبرى حسب القطاع<br>
+      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف المهتمين بقضايا محددة (طلاق، هجرة، إصابات، عقود، جنائي)<br>
+      <i class="fas fa-check-circle" style="color:#d4af37;"></i> إعادة استهداف (Retargeting) زوار موقعك الإلكتروني الذين لم يتحولوا بعد<br>
+      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف الشبيه بجمهور عملائك الحاليين (Lookalike Audiences)<br>
+      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف حسب العمر، الجنس، المستوى التعليمي، الدخل، والحالة الاجتماعية<br><br>
+      <span class="gold">النتيجة:</span> إعلانات تظهر فقط للأشخاص الذين يحتاجون خدماتك القانونية فعلاً، وبميزانية أقل وتكلفة استشارة منخفضة بشكل مذهل مقارنة بالطرق التقليدية.
+    </p>
   </section>
 
   <section class="section section-dark">
@@ -753,10 +887,10 @@
     <p class="section-subtitle" id="whyChooseSubtitle">مزايا تنافسية تميزنا عن غيرنا</p>
 
     <div class="stats-grid">
-      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-star"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">خبرة متخصصة</span><span class="stat-label" style="display:block;">فريق متخصص في التسويق القانوني الرقمي</span></div>
-      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-bolt"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">نتائج سريعة</span><span class="stat-label" style="display:block;">تحسن ملحوظ في أول 30 يوم</span></div>
-      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-puzzle-piece"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">استراتيجيات مخصصة</span><span class="stat-label" style="display:block;">خطة تسويق فريدة لكل مكتب محاماة</span></div>
-      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-lock"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">خصوصية تامة</span><span class="stat-label" style="display:block;">حماية كاملة لبياناتك وبيانات العملاء</span></div>
+      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fab fa-meta"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">تخصص حصري</span><span class="stat-label" style="display:block;">نعمل فقط على إعلانات ميتا للمحامين، وهذا كل ما نفعله. خبير في مجال واحد أفضل من مبتدئ في عشرة.</span></div>
+      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-bolt"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">نتائج سريعة</span><span class="stat-label" style="display:block;">معظم عملائنا يشهدون تحسناً ملحوظاً في عدد الاستشارات خلال أول 30 يوماً من إطلاق الحملات.</span></div>
+      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-puzzle-piece"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">استراتيجيات مخصصة</span><span class="stat-label" style="display:block;">لا يوجد قالب جاهز. كل مكتب محاماة له تخصصه وجمهوره. نضع خطة فريدة تناسب احتياجاتك بدقة.</span></div>
+      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-chart-line"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">تحسين مستمر</span><span class="stat-label" style="display:block;">نحلل النتائج يومياً ونطور الأداء أسبوعياً. الإعلانات الراكدة تخسر المال، ونحن لا نقبل بذلك.</span></div>
     </div>
   </section>
 
@@ -764,53 +898,55 @@
     <h2 class="section-title" id="howWeWorkTitle">كيف نعمل؟</h2>
     <p class="section-subtitle" id="howWeWorkSubtitle">منهجية واضحة للوصول إلى نتائج مضمونة</p>
     <div class="process-steps">
-      <div class="process-step"><div class="step-number">١</div><h3>تحليل وتخطيط</h3><p>ندرس مكتبك، تخصصك القانوني، منافسيك، والسوق المستهدف لوضع استراتيجية مخصصة ودقيقة.</p></div>
-      <div class="process-step"><div class="step-number">٢</div><h3>بناء الهوية</h3><p>نصمم هوية رقمية احترافية تعكس قوة مكتبك وتبني جسور الثقة مع العملاء المحتملين.</p></div>
-      <div class="process-step"><div class="step-number">٣</div><h3>إطلاق الإعلانات</h3><p>نطلق حملات Meta Ads دقيقة الاستهداف تجذب عملاء محتملين ذوي جودة عالية واحتياج قانوني حقيقي.</p></div>
-      <div class="process-step"><div class="step-number">٤</div><h3>تحسين مستمر</h3><p>نحلل النتائج ونطور الأداء باستمرار لضمان أعلى عائد على استثمارك التسويقي.</p></div>
+      <div class="process-step"><div class="step-number">١</div><h3><i class="fas fa-search"></i> تحليل وتخطيط</h3><p>ندرس مكتبك بدقة: تخصصك القانوني، منافسيك، جمهورك المستهدف، نقاط قوتك وضعفك. نخرج بخطة إعلانية مخصصة تقوم على بيانات حقيقية وليس تخمينات.</p></div>
+      <div class="process-step"><div class="step-number">٢</div><h3><i class="fas fa-palette"></i> بناء الهوية الإعلانية</h3><p>نصمم إعلانات وصفحات هبوط ورسائل تسويقية تعكس قوة مكتبك وهيبتك القانونية. الهدف: أن يشعر العميل بالثقة قبل أن يتصل بك.</p></div>
+      <div class="process-step"><div class="step-number">٣</div><h3><i class="fab fa-meta"></i> إطلاق حملات ميتا</h3><p>نطلق حملات فيسبوك وإنستغرام باستخدام استراتيجيات استهداف دقيقة جداً. نبدأ بميزانية اختبارية صغيرة ثم نوسع بناءً على النتائج الفعلية.</p></div>
+      <div class="process-step"><div class="step-number">٤</div><h3><i class="fas fa-chart-line"></i> تحسين مستمر</h3><p>نحلل النتائج يومياً، نجري تجارب (A/B Testing)، نوقف الإعلانات الضعيفة، ونضاعف ميزانية الإعلانات الفائزة. نضمن لك أفضل عائد على كل ريال تنفقه.</p></div>
     </div>
   </section>
 
   <section class="section section-dark">
-    <h2 class="section-title" id="faqTitle">أسئلة شائعة</h2>
+    <h2 class="section-title" id="faqTitle"><i class="fas fa-question-circle"></i> أسئلة شائعة</h2>
     <div style="max-width:800px;margin:40px auto 0;">
-      <div class="faq-item"><h3>❓ كم تكلفة خدماتكم؟</h3><p>نقدم حلولاً مخصصة حسب حجم مكتبك وأهدافك التسويقية. نناقش التفاصيل في الاستشارة المجانية لتقديم عرض سعر مناسب وشفاف.</p></div>
-      <div class="faq-item"><h3>❓ متى أبدأ برؤية النتائج؟</h3><p>معظم مكاتب المحاماة تلاحظ زيادة ملحوظة في الاستشارات المؤهلة خلال أول 30-45 يوماً من إطلاق الحملات الإعلانية.</p></div>
-      <div class="faq-item"><h3>❓ هل تتعاملون مع جميع التخصصات القانونية؟</h3><p>نعم، لدينا خبرة واسعة في تسويق مختلف التخصصات: قضايا الأسرة، الهجرة والجنسية، الإصابات والحوادث، القضايا الجنائية، قانون الشركات، والتجاري.</p></div>
-      <div class="faq-item"><h3>❓ كيف أتأكد من جودة العملاء المحتملين؟</h3><p>نستخدم استهدافاً دقيقاً ونظام تأهيل للعملاء المحتملين لضمان حصولك على استشارات من أشخاص يحتاجون فعلاً خدماتك القانونية ولديهم قابلية للتعاقد.</p></div>
+      <div class="faq-item"><h3><i class="fas fa-chart-line"></i> لماذا تركزون فقط على إعلانات ميتا؟</h3><p>لأن فيسبوك وإنستغرام هما المنصتان الوحيدتان اللتان تسمحان باستهداف دقيق جداً للمحامين. يمكننا استهداف الأشخاص بناءً على مهنتهم القانونية، اهتماماتهم بالقضايا، موقعهم الجغرافي، وحتى تفاعلهم مع صفحات منافسة. هذه الدقة غير متوفرة بنفس المستوى في أي منصة أخرى. ببساطة، نريد أن نكون الأفضل في شيء واحد بدلاً من أن نكون متوسطين في كل شيء.</p></div>
+      <div class="faq-item"><h3><i class="fas fa-coins"></i> كم تكلفة خدماتكم؟</h3><p>نقدم حلولاً مخصصة تبدأ من 500 دولار شهرياً للحملات الإعلانية (تذهب ميزانيتها بالكامل للإعلانات) بالإضافة إلى رسوم إدارة تتراوح حسب حجم الحملة وتعقيدها. نناقش كل التفاصيل بشفافية في الاستشارة المجانية ونقدم عرض سعر واضح دون أي رسوم خفية.</p></div>
+      <div class="faq-item"><h3><i class="fas fa-clock"></i> متى أبدأ برؤية النتائج؟</h3><p>معظم مكاتب المحاماة تبدأ بملاحظة زيادة ملحوظة في الاستشارات المؤهلة خلال أول 30-45 يوماً من إطلاق الحملات الإعلانية. نحتاج إلى أسبوعين لجمع البيانات الأولية وتحسين الاستهداف، ثم تبدأ النتائج في التسارع.</p></div>
+      <div class="faq-item"><h3><i class="fas fa-gavel"></i> هل تتعاملون مع جميع التخصصات القانونية؟</h3><p>نعم، لدينا خبرة واسعة في تسويق مختلف التخصصات عبر ميتا: قضايا الأسرة والطلاق، الهجرة والجنسية، الإصابات الشخصية والحوادث، القضايا الجنائية، قانون الشركات، العقود التجارية، قانون العمل، وغيرها. كل تخصص له استراتيجيته الخاصة التي نصممها خصيصاً له.</p></div>
+      <div class="faq-item"><h3><i class="fas fa-filter"></i> كيف أتأكد من جودة العملاء المحتملين؟</h3><p>نستخدم نظاماً متكاملاً لتأهيل العملاء المحتملين نشره في الإعلانات ونماذج الحجز. نسأل أسئلة تصفية ذكية تجعل فقط الأشخاص الجادين ذوي الحاجة الحقيقية يصلون إليك. هذا يعني أن الاستشارات التي تتلقاها ستكون أكثر احترافية وأعلى احتمالية للتحول إلى قضايا مدفوعة.</p></div>
+      <div class="faq-item"><h3><i class="fas fa-paint-brush"></i> هل تشمل خدماتكم تصميم الصفحات وإدارتها؟</h3><p>بالتأكيد. نقدم خدمة متكاملة تشمل تصميم هوية صفحات فيسبوك وإنستغرام الخاصة بمكتبك، بالإضافة إلى الإدارة اليومية: جدولة المحتوى، الرد على الاستفسارات، بناء الثقة، وتعزيز التفاعل. كل هذا يتم بطريقة احترافية تعكس هيبة عملك القانوني.</p></div>
     </div>
   </section>
 
   <section class="section" style="text-align: center;">
-    <h2 class="section-title" id="contactTitle">تواصل معنا</h2>
+    <h2 class="section-title" id="contactTitle"><i class="fas fa-envelope"></i> تواصل معنا</h2>
     <p class="section-subtitle" id="contactSubtitle">تابع الوكالة والمؤسس على إنستغرام</p>
     <div class="social-links">
       <a href="https://www.instagram.com/lumora.growth.agency?igsh=Mzc3eHM5NzBnaTZy" target="_blank" class="social-link" title="حساب الوكالة"><i class="fab fa-instagram"></i></a>
       <a href="https://www.instagram.com/hatem_dayob?igsh=MWN2ZDEwMzFkenQzcA==" target="_blank" class="social-link" title="حساب المؤسس"><i class="fas fa-user-tie"></i></a>
     </div>
     <div style="margin-top: 20px; color: #999; font-size: 14px;">
-      <p><strong style="color:#d4af37;">Lumora Growth Agency</strong></p>
-      <p style="margin-top: 5px;">المؤسس: <strong style="color:#d4af37;">Hatem Dayob</strong></p>
+      <p><strong style="color:#d4af37;"><i class="fas fa-crown"></i> Lumora Growth Agency</strong></p>
+      <p style="margin-top: 5px;">المؤسس: <strong style="color:#d4af37;">Hatem Dayob</strong> — خبير تسويق قانوني معتمد</p>
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-col"><h4>Lumora Agency</h4><p>وكالة تسويق قانوني متخصصة في جلب العملاء لمكاتب المحاماة عبر أنظمة Meta Ads المتطورة واستراتيجيات التسويق الرقمي.</p></div>
-      <div class="footer-col"><h4>روابط سريعة</h4><a href="#">الرئيسية</a><a href="#">خدماتنا</a><a href="#">عن الوكالة</a><a href="#">اتصل بنا</a></div>
-      <div class="footer-col"><h4>تواصل معنا</h4><a href="https://wa.me/963986148756"><i class="fab fa-whatsapp"></i> واتساب</a><a href="https://www.instagram.com/lumora.growth.agency?igsh=Mzc3eHM5NzBnaTZy" target="_blank"><i class="fab fa-instagram"></i> الوكالة</a><a href="https://www.instagram.com/hatem_dayob?igsh=MWN2ZDEwMzFkenQzcA==" target="_blank"><i class="fas fa-user-tie"></i> المؤسس</a></div>
+      <div class="footer-col"><h4><i class="fas fa-gavel"></i> Lumora Agency</h4><p>وكالة تسويق قانوني <strong class="gold">متخصصة حصرياً في إعلانات ميتا (فيسبوك وإنستغرام)</strong> لمكاتب المحاماة. نحملك العملاء، وليس المشاهدات. خدمتنا تشمل إدارة الإعلانات، تصميم الصفحات، وإدارة الهوية الرقمية.</p></div>
+      <div class="footer-col"><h4><i class="fas fa-link"></i> روابط سريعة</h4><a href="#"><i class="fas fa-home"></i> الرئيسية</a><a href="#"><i class="fas fa-briefcase"></i> خدماتنا</a><a href="#"><i class="fas fa-building"></i> عن الوكالة</a><a href="#"><i class="fas fa-phone-alt"></i> اتصل بنا</a></div>
+      <div class="footer-col"><h4><i class="fas fa-share-alt"></i> تواصل معنا</h4><a href="https://wa.me/963986148756"><i class="fab fa-whatsapp"></i> واتساب</a><a href="https://www.instagram.com/lumora.growth.agency?igsh=Mzc3eHM5NzBnaTZy" target="_blank"><i class="fab fa-instagram"></i> الوكالة</a><a href="https://www.instagram.com/hatem_dayob?igsh=MWN2ZDEwMzFkenQzcA==" target="_blank"><i class="fas fa-user-tie"></i> المؤسس</a></div>
     </div>
-    <div class="footer-bottom">© 2025 Lumora Growth Agency — جميع الحقوق محفوظة | Premium Legal Marketing Systems</div>
+    <div class="footer-bottom"><i class="far fa-copyright"></i> 2025 Lumora Growth Agency — جميع الحقوق محفوظة | <i class="fab fa-meta"></i> متخصصون في إعلانات ميتا للمحامين | <i class="fas fa-paint-brush"></i> تصميم وإدارة الصفحات</div>
   </footer>
 
   <!-- ========== نافذة الاستشارة المنبثقة ========== -->
   <div class="modal-overlay" id="consultationModal">
     <div class="modal-content" id="modalContent">
-      <button class="modal-close" onclick="closeConsultationModal()">✕</button>
+      <button class="modal-close" onclick="closeConsultationModal()"><i class="fas fa-times"></i></button>
       <div id="modalFormContainer">
-        <div class="modal-icon">⚖️</div>
-        <h2 class="modal-title" id="modalTitle">احجز استشارتك</h2>
-        <p class="modal-subtitle" id="modalSubtitle">املأ البيانات وسيتواصل معك فريق <strong>Lumora</strong> خلال ٢٤ ساعة</p>
+        <div class="modal-icon"><i class="fas fa-scale-balanced"></i></div>
+        <h2 class="modal-title" id="modalTitle">احجز استشارتك المجانية</h2>
+        <p class="modal-subtitle" id="modalSubtitle">املأ البيانات وسيتواصل معك فريق <strong>Lumora</strong> خلال ٢٤ ساعة لمناقشة كيف يمكننا جلب عملاء لمكتبك عبر إعلانات ميتا</p>
         <form class="modal-form" id="modalForm">
           <div class="form-group"><input type="text" id="modalName" placeholder="الاسم الكامل *" required></div>
           <div class="form-group"><input type="text" id="modalFirm" placeholder="اسم مكتب المحاماة *" required></div>
@@ -823,14 +959,14 @@
               <option>القضايا الجنائية</option>
               <option>قانون الشركات</option>
               <option>تجاري وعقود</option>
+              <option>قانون العمل</option>
               <option>آخر</option>
             </select>
           </div>
           <div class="form-group"><input type="text" id="modalCountry" placeholder="الدولة / المدينة *" required></div>
 
-          <!-- ========== حقل الهاتف مع نداء الدولة ========== -->
           <div class="form-group">
-            <label style="display:block;color:#999;font-size:13px;margin-bottom:6px;">رقم الهاتف *</label>
+            <label style="display:block;color:#999;font-size:13px;margin-bottom:6px;"><i class="fas fa-phone"></i> رقم الهاتف *</label>
             <div class="phone-group">
               <select id="countryCode" required>
                 <option value="">اختر الدولة</option>
@@ -873,22 +1009,22 @@
           </div>
 
           <div class="form-group"><input type="email" id="modalEmail" placeholder="البريد الإلكتروني *" required></div>
-          <button type="submit" class="btn-modal-submit" id="modalSubmitBtn">🚀 أرسل الطلب</button>
+          <button type="submit" class="btn-modal-submit" id="modalSubmitBtn"><i class="fas fa-paper-plane"></i> أرسل الطلب</button>
         </form>
       </div>
       <div class="success-message" id="successMessage">
-        <div class="success-icon">✅</div>
+        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
         <h3>تم الإرسال بنجاح!</h3>
         <p>شكراً لثقتك بـ <strong>Lumora Agency</strong></p>
-        <p style="margin-top: 8px;">سنتواصل معك خلال <strong style="color:#d4af37;">٢٤ ساعة</strong></p>
+        <p style="margin-top: 8px;">سنتواصل معك خلال <strong style="color:#d4af37;">٢٤ ساعة</strong> لمناقشة حملتك الإعلانية</p>
       </div>
     </div>
   </div>
 
   <!-- أزرار عائمة -->
   <div style="position:fixed;bottom:20px;left:20px;z-index:9999;display:flex;flex-direction:column;gap:10px;">
-    <button onclick="openConsultationModal()" class="btn btn-primary pulse" style="font-size:14px;">⚡ استشارة مجانية</button>
-    <a href="https://wa.me/963986148756?text=مرحباً،%20أرغب%20بطلب%20استشارة%20فورية" target="_blank" style="background:#111;color:#d4af37;padding:12px 18px;border-radius:50px;text-decoration:none;font-weight:bold;border:2px solid rgba(212,175,55,0.3);text-align:center;font-size:14px;"><i class="fab fa-whatsapp"></i> واتساب</a>
+    <button onclick="openConsultationModal()" class="btn btn-primary pulse" style="font-size:14px;"><i class="fas fa-calendar-check"></i> استشارة مجانية</button>
+    <a href="https://wa.me/963986148756?text=مرحباً،%20أرغب%20بطلب%20استشارة%20فورية" target="_blank" style="background:#111;color:#d4af37;padding:12px 18px;border-radius:50px;text-decoration:none;font-weight:bold;border:2px solid rgba(212,175,55,0.3);text-align:center;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;"><i class="fab fa-whatsapp"></i> واتساب</a>
   </div>
 
   <script>
@@ -919,24 +1055,24 @@
       if(!isArabic) {
         document.documentElement.lang = 'en';
         document.documentElement.dir = 'ltr';
-        document.getElementById('mainTitle').innerHTML = 'We Transform Law Firms Into <span class="gold">Leading Legal Brands</span> That Attract Premium Clients';
-        document.getElementById('mainDesc').innerHTML = 'At <strong>Lumora Growth Agency</strong>, we build comprehensive legal marketing systems combining <span class="gold">smart Meta Ads strategies</span>, digital identity building, and client experience optimization.';
+        document.getElementById('mainTitle').innerHTML = 'We Transform Law Firms Into <span class="gold">Leading Legal Brands</span><br>Via Facebook & Instagram Ads';
+        document.getElementById('mainDesc').innerHTML = 'At <strong>Lumora Growth Agency</strong>, we don\'t believe in luck. Our sole focus is <span class="gold">Meta Ads (Facebook & Instagram)</span> for law firms. We use hyper-targeting to reach your potential clients at the right moment, with the right message. We don\'t sell you views or likes... we sell you <strong>qualified legal consultations and signed cases</strong>.';
         document.getElementById('whyDifferentTitle').innerHTML = 'Why Is Lumora Different?';
-        document.getElementById('whyDifferentSubtitle').innerHTML = 'Not just an ad agency... We are true growth partners for your firm';
-        document.getElementById('whyDifferentDesc').innerHTML = 'Most agencies focus on surface-level metrics. At <strong>Lumora</strong>, we focus on what truly matters: <span class="gold">qualified legal consultations, client quality, and signed cases</span>.';
-        document.getElementById('smartMarketingTitle').innerHTML = 'Smart Legal Marketing';
-        document.getElementById('smartMarketingSubtitle').innerHTML = 'Invest in your firm\'s growth professionally';
-        document.getElementById('smartMarketingDesc').innerHTML = 'In an increasingly competitive world, traditional referrals alone are no longer enough. <span class="gold">Specialized legal marketing</span> is the key to consistent high-value client flow.';
+        document.getElementById('whyDifferentSubtitle').innerHTML = '100% focused on Meta Ads... We don\'t spread our efforts across other platforms';
+        document.getElementById('whyDifferentDesc').innerHTML = 'Most agencies spread themselves thin across Google, TikTok, LinkedIn, and Twitter. At <strong>Lumora</strong>, our focus is exclusively on <span class="gold">Facebook & Instagram</span> because we believe legal clients are there. We know exactly how to target them: by location, profession, legal interests, purchasing behavior, and even interaction with competitor pages.';
+        document.getElementById('smartMarketingTitle').innerHTML = '<i class="fab fa-meta"></i> Meta Ads for Lawyers';
+        document.getElementById('smartMarketingSubtitle').innerHTML = '100% focused on Facebook & Instagram to target legal clients';
+        document.getElementById('smartMarketingDesc').innerHTML = 'At <strong>Lumora</strong> we don\'t分散 our efforts. Our focus is exclusively on <span class="gold">Meta Platform (Facebook + Instagram)</span> because that\'s where your potential clients spend their time.<br><br><strong>Advanced targeting techniques we use:</strong><br><i class="fas fa-check-circle"></i> Targeting people who engaged with similar legal pages<br><i class="fas fa-check-circle"></i> Targeting employees in companies by sector<br><i class="fas fa-check-circle"></i> Targeting those interested in specific cases<br><i class="fas fa-check-circle"></i> Retargeting website visitors<br><i class="fas fa-check-circle"></i> Lookalike audiences based on your current clients';
         document.getElementById('whyChooseTitle').innerHTML = 'Why Choose Lumora?';
         document.getElementById('whyChooseSubtitle').innerHTML = 'Competitive advantages that set us apart';
         document.getElementById('howWeWorkTitle').innerHTML = 'How We Work?';
         document.getElementById('howWeWorkSubtitle').innerHTML = 'A clear methodology for guaranteed results';
-        document.getElementById('faqTitle').innerHTML = 'Frequently Asked Questions';
-        document.getElementById('contactTitle').innerHTML = 'Contact Us';
+        document.getElementById('faqTitle').innerHTML = '<i class="fas fa-question-circle"></i> Frequently Asked Questions';
+        document.getElementById('contactTitle').innerHTML = '<i class="fas fa-envelope"></i> Contact Us';
         document.getElementById('contactSubtitle').innerHTML = 'Follow the agency and founder on Instagram';
-        document.getElementById('modalTitle').innerHTML = 'Book Your Consultation';
-        document.getElementById('modalSubtitle').innerHTML = 'Fill in your details and the <strong>Lumora</strong> team will contact you within 24 hours';
-        document.getElementById('modalSubmitBtn').innerHTML = '🚀 Submit Request';
+        document.getElementById('modalTitle').innerHTML = 'Book Your Free Consultation';
+        document.getElementById('modalSubtitle').innerHTML = 'Fill in your details and the <strong>Lumora</strong> team will contact you within 24 hours to discuss your Meta ad campaign';
+        document.getElementById('modalSubmitBtn').innerHTML = '<i class="fas fa-paper-plane"></i> Submit Request';
         document.querySelector('.lang-toggle').innerHTML = 'العربية';
       } else {
         location.reload();
@@ -948,7 +1084,7 @@
       const submitBtn = document.getElementById('modalSubmitBtn');
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '⏳ جاري الإرسال...';
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
 
       const countryCode = document.getElementById('countryCode').value;
       const phoneNumber = document.getElementById('modalPhone').value.trim();
@@ -964,7 +1100,7 @@
         details: ''
       };
 
-      const message = `🔥 *طلب استشارة قانونية جديد*\n\n━━━━━━━━━━━━━━━━━━\n👤 *الاسم:* ${data.name}\n🏛️ *المكتب:* ${data.firm}\n⚖️ *التخصص:* ${data.specialty}\n🌍 *الدولة:* ${data.country}\n📞 *الهاتف:* ${data.phone}\n📧 *الإيميل:* ${data.email}\n━━━━━━━━━━━━━━━━━━\n📅 ${new Date().toLocaleString('ar-SA')}\n🤖 _Lumora Growth Agency_`;
+      const message = `🔥 *طلب استشارة قانونية جديد (إعلانات ميتا)*\n\n━━━━━━━━━━━━━━━━━━\n👤 *الاسم:* ${data.name}\n🏛️ *المكتب:* ${data.firm}\n⚖️ *التخصص:* ${data.specialty}\n🌍 *الدولة:* ${data.country}\n📞 *الهاتف:* ${data.phone}\n📧 *الإيميل:* ${data.email}\n━━━━━━━━━━━━━━━━━━\n📅 ${new Date().toLocaleString('ar-SA')}\n🎯 _Lumora Growth Agency - Meta Ads Specialists_`;
 
       try {
         const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -989,4 +1125,4 @@
     });
   </script>
 </body>
-                                                                                                                                                                                                </html>
+  </html>
