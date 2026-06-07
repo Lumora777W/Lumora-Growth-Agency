@@ -1,1128 +1,499 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lumora Growth Agency | وكالة تسويق قانوني متخصصة في إعلانات ميتا</title>
-  <meta name="description" content="وكالة Lumora المتخصصة حصرياً في إعلانات ميتا (فيسبوك وإنستغرام) لمكاتب المحاماة. نحملك العملاء القانونيين المؤهلين عبر استهداف دقيق." />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumora | نظام متكامل لجلب القضايا للمحامين</title>
+  <meta name="description" content="نظام متكامل يجلب القضايا والاستشارات القانونية لمكتب المحاماة الخاص بك." />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #050505;
-      color: white;
-      overflow-x: hidden;
-      line-height: 1.8;
-    }
-
-    .bg-glow {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.1;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .glow-1 {
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, #d4af37, #b8941f, transparent 70%);
-      top: -200px;
-      left: -200px;
-      animation: floatGlow 8s ease-in-out infinite;
-    }
-
-    .glow-2 {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, #c9a84c, #a8882e, transparent 70%);
-      top: 30%;
-      right: -200px;
-      animation: floatGlow 10s ease-in-out infinite reverse;
-    }
-
-    .glow-3 {
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, #e6c458, #b8941f, transparent 70%);
-      bottom: -150px;
-      left: 25%;
-      animation: floatGlow 7s ease-in-out infinite;
-    }
-
-    .glow-4 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #d4af37, #997a1d, transparent 70%);
-      top: 55%;
-      left: -150px;
-      animation: floatGlow 9s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatGlow {
-      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.08; }
-      25% { transform: translate(30px, -30px) scale(1.05); opacity: 0.12; }
-      50% { transform: translate(-20px, 20px) scale(0.95); opacity: 0.1; }
-      75% { transform: translate(15px, -15px) scale(1.02); opacity: 0.11; }
-    }
-
-    .navbar {
-      width: 100%;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(25px);
-      background: rgba(0,0,0,0.75);
-      border-bottom: 1px solid rgba(212,175,55,0.1);
-    }
-
-    .brand {
-      font-family: 'Cinzel', serif;
-      font-size: 32px;
-      color: #d4af37;
-      letter-spacing: 4px;
-      font-weight: bold;
-      text-shadow: 0 0 20px rgba(212,175,55,0.3);
-    }
-
-    .brand span {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 8px;
-      color: #999;
-      margin-top: -5px;
-    }
-
-    .lang-toggle {
-      border: 1px solid #d4af37;
-      background: transparent;
-      color: #d4af37;
-      padding: 10px 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-weight: bold;
-      font-family: 'Cairo', sans-serif;
-    }
-
-    .lang-toggle:hover {
-      background: #d4af37;
-      color: black;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 160px 8% 100px;
-      position: relative;
-    }
-
-    .hero-content {
-      max-width: 950px;
-      text-align: center;
-    }
-
-    .premium-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 24px;
-      border: 1px solid rgba(212,175,55,0.3);
-      border-radius: 50px;
-      color: #d4af37;
-      margin-bottom: 30px;
-      background: rgba(212,175,55,0.06);
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    .premium-badge i {
-      font-size: 16px;
-    }
-
-    h1 {
-      font-size: 68px;
-      line-height: 1.3;
-      margin-bottom: 30px;
-      font-weight: 800;
-      background: linear-gradient(to bottom, #ffffff, #cccccc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .gold {
-      color: #d4af37;
-      -webkit-text-fill-color: #d4af37;
-    }
-
-    .hero p {
-      color: #bdbdbd;
-      font-size: 20px;
-      margin-bottom: 45px;
-      line-height: 2;
-    }
-
-    .cta-group {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 18px 34px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: bold;
-      transition: 0.35s ease;
-      cursor: pointer;
-      font-family: 'Cairo', sans-serif;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #d4af37, #f0cf62);
-      color: #000;
-      box-shadow: 0 10px 40px rgba(212,175,55,0.3);
-      border: none;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 50px rgba(212,175,55,0.5);
-    }
-
-    .btn-secondary {
-      border: 2px solid rgba(212,175,55,0.5);
-      color: #d4af37;
-      background: transparent;
-    }
-
-    .btn-secondary:hover {
-      background: #d4af37;
-      color: #000;
-    }
-
-    .section {
-      padding: 120px 8%;
-    }
-
-    .section-dark {
-      background: rgba(10,10,10,0.5);
-    }
-
-    .section-title {
-      font-size: 48px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: 800;
-      color: #d4af37;
-      text-shadow: 0 0 30px rgba(212,175,55,0.15);
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #999;
-      font-size: 18px;
-      margin-bottom: 60px;
-    }
-
-    .section-text {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      color: #bfbfbf;
-      font-size: 18px;
-      line-height: 2;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 60px;
-    }
-
-    .stat-card {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(180deg, #111, #0a0a0a);
-      border: 1px solid rgba(212,175,55,0.15);
-      border-radius: 20px;
-      transition: 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(212,175,55,0.08), transparent 70%);
-      opacity: 0;
-      transition: 0.4s;
-    }
-
-    .stat-card:hover::before { opacity: 1; }
-    .stat-card:hover {
-      border-color: rgba(212,175,55,0.4);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(212,175,55,0.1);
-    }
-
-    .stat-label {
-      color: #999;
-      font-size: 16px;
-      margin-top: 10px;
-      position: relative;
-    }
-
-    .card-icon-wrapper {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .card-icon-inner {
-      font-size: 42px;
-      color: #d4af37;
-      position: relative;
-      z-index: 2;
-      transition: 0.4s;
-    }
-
-    .card-icon-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      background: radial-gradient(circle, rgba(212,175,55,0.5), rgba(212,175,55,0.15), transparent 70%);
-      border-radius: 50%;
-      z-index: 0;
-      animation: iconGlowPulse 2.5s ease-in-out infinite;
-    }
-
-    .card-icon-ring {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
-      border: 1px solid rgba(212,175,55,0.3);
-      border-radius: 50%;
-      z-index: 1;
-      animation: iconRingRotate 4s linear infinite;
-    }
-
-    @keyframes iconGlowPulse {
-      0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
-      50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.9; }
-    }
-
-    @keyframes iconRingRotate {
-      0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
-      50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.2); }
-      100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
-    }
-
-    .card:hover .card-icon-inner,
-    .stat-card:hover .card-icon-inner {
-      transform: scale(1.15);
-      text-shadow: 0 0 30px rgba(212,175,55,0.8);
-    }
-
-    .card:hover .card-icon-glow,
-    .stat-card:hover .card-icon-glow {
-      animation: iconGlowPulse 1.2s ease-in-out infinite;
-    }
-
-    .cards {
-      margin-top: 70px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, #111, #0a0a0a);
-      border: 1px solid rgba(212,175,55,0.12);
-      border-radius: 20px;
-      padding: 40px 30px;
-      transition: 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 0;
-      background: linear-gradient(to bottom, #d4af37, #f0cf62);
-      transition: 0.5s ease;
-      border-radius: 0 4px 4px 0;
-    }
-
-    .card:hover::before { height: 100%; }
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(212,175,55,0.35);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(212,175,55,0.05);
-    }
-
-    .card h3 {
-      color: #d4af37;
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
-
-    .card p {
-      color: #b8b8b8;
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 60px;
-    }
-
-    .process-step {
-      text-align: center;
-      padding: 35px 25px;
-      background: rgba(17,17,17,0.6);
-      border: 1px solid rgba(212,175,55,0.08);
-      border-radius: 20px;
-      transition: 0.3s;
-    }
-
-    .process-step:hover {
-      border-color: rgba(212,175,55,0.25);
-      background: rgba(20,20,20,0.8);
-    }
-
-    .step-number {
-      width: 65px;
-      height: 65px;
-      background: linear-gradient(135deg, #d4af37, #f0cf62);
-      color: #000;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      font-weight: 800;
-      margin: 0 auto 20px;
-      box-shadow: 0 10px 30px rgba(212,175,55,0.3);
-    }
-
-    .process-step h3 {
-      color: #d4af37;
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .process-step p {
-      color: #999;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .faq-item {
-      background: #0d0d0d;
-      border: 1px solid rgba(212,175,55,0.1);
-      border-radius: 15px;
-      padding: 25px;
-      margin-bottom: 15px;
-      transition: 0.3s;
-    }
-
-    .faq-item:hover {
-      border-color: rgba(212,175,55,0.3);
-      background: #0f0f0f;
-    }
-
-    .faq-item h3 {
-      color: #d4af37;
-      margin-bottom: 10px;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .faq-item h3 i {
-      font-size: 18px;
-      color: #d4af37;
-    }
-
-    .faq-item p {
-      color: #999;
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .social-link {
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, #111, #0a0a0a);
-      border: 1px solid rgba(212,175,55,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #d4af37;
-      font-size: 26px;
-      text-decoration: none;
-      transition: 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .social-link::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(212,175,55,0.3), transparent 70%);
-      opacity: 0;
-      transition: 0.4s;
-    }
-
-    .social-link:hover::before { opacity: 1; }
-    .social-link:hover {
-      transform: translateY(-5px);
-      border-color: #d4af37;
-      box-shadow: 0 15px 40px rgba(212,175,55,0.35);
-    }
-
-    .social-link i { position: relative; z-index: 1; }
-
-    .footer {
-      padding: 60px 8% 30px;
-      background: #000;
-      border-top: 1px solid rgba(212,175,55,0.1);
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .footer-col h4 { color: #d4af37; margin-bottom: 20px; }
-    .footer-col p, .footer-col a { color: #777; font-size: 14px; text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
-    .footer-col a:hover { color: #d4af37; }
-    .footer-col a i { margin-left: 8px; width: 20px; }
-    .footer-bottom { text-align: center; color: #555; font-size: 13px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); }
-
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(12px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 99999;
-      padding: 20px;
-    }
-
-    .modal-content {
-      width: 100%;
-      max-width: 500px;
-      background: linear-gradient(180deg, #0f0f0f, #080808);
-      border: 1px solid rgba(212,175,55,0.2);
-      border-radius: 24px;
-      padding: 35px 30px;
-      position: relative;
-      box-shadow: 0 25px 70px rgba(212,175,55,0.15);
-      animation: modalIn 0.35s ease;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-
-    @keyframes modalIn {
-      from { opacity: 0; transform: scale(0.92) translateY(-20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(212,175,55,0.15);
-      color: #d4af37;
-      font-size: 18px;
-      cursor: pointer;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-      z-index: 10;
-    }
-
-    .modal-close:hover { background: rgba(212,175,55,0.1); border-color: #d4af37; }
-    .modal-icon { text-align: center; font-size: 40px; margin-bottom: 12px; color: #d4af37; }
-    .modal-title { font-size: 24px; color: #d4af37; text-align: center; margin-bottom: 6px; font-weight: 800; }
-    .modal-subtitle { text-align: center; color: #999; font-size: 13px; margin-bottom: 25px; line-height: 1.7; }
-    .modal-form .form-group { margin-bottom: 12px; }
-
-    .modal-form input,
-    .modal-form select {
-      width: 100%;
-      padding: 14px 18px;
-      background: #0a0a0a;
-      border: 1px solid #1a1a1a;
-      border-radius: 14px;
-      color: white;
-      font-family: 'Cairo', sans-serif;
-      font-size: 15px;
-      transition: 0.3s;
-    }
-
-    .modal-form input:focus,
-    .modal-form select:focus {
-      border-color: #d4af37;
-      outline: none;
-      box-shadow: 0 0 20px rgba(212,175,55,0.1);
-      background: #0f0f0f;
-    }
-
-    .modal-form select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23d4af37' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: left 18px center;
-    }
-
-    .phone-group {
-      display: flex;
-      gap: 10px;
-      align-items: stretch;
-    }
-
-    .phone-group select {
-      width: 130px;
-      min-width: 130px;
-      flex-shrink: 0;
-      padding: 14px 12px;
-      background: #0a0a0a;
-      border: 1px solid #1a1a1a;
-      border-radius: 14px;
-      color: white;
-      font-family: 'Cairo', sans-serif;
-      font-size: 14px;
-      transition: 0.3s;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23d4af37' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: left 10px center;
-      cursor: pointer;
-    }
-
-    .phone-group select:focus {
-      border-color: #d4af37;
-      outline: none;
-      box-shadow: 0 0 20px rgba(212,175,55,0.1);
-      background-color: #0f0f0f;
-    }
-
-    .phone-group input {
-      flex: 1;
-    }
-
-    .btn-modal-submit {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, #d4af37, #f0cf62);
-      color: #000;
-      border: none;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      font-family: 'Cairo', sans-serif;
-      margin-top: 10px;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .btn-modal-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(212,175,55,0.35); }
-    .btn-modal-submit:disabled { opacity: 0.6; cursor: not-allowed; }
-
-    .success-message { display: none; text-align: center; padding: 25px 0; }
-    .success-message .success-icon { font-size: 60px; color: #4CAF50; margin-bottom: 15px; animation: successPop 0.6s ease; }
-
-    @keyframes successPop {
-      0% { transform: scale(0); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-
-    .success-message h3 { color: #4CAF50; font-size: 22px; margin-bottom: 8px; }
-    .success-message p { color: #999; font-size: 14px; line-height: 1.8; }
-
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.4); }
-      50% { box-shadow: 0 0 0 25px rgba(212,175,55,0); }
-    }
-
-    .pulse { animation: pulse 2s infinite; }
-
-    .services-highlight {
-      background: linear-gradient(135deg, rgba(212,175,55,0.05), rgba(212,175,55,0.02));
-      border-radius: 30px;
-      padding: 50px;
-      margin-top: 60px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .service-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      padding: 20px;
-      background: rgba(0,0,0,0.3);
-      border-radius: 16px;
-      transition: 0.3s;
-    }
-
-    .service-item:hover {
-      background: rgba(212,175,55,0.05);
-      transform: translateX(-5px);
-    }
-
-    .service-icon {
-      font-size: 32px;
-      color: #d4af37;
-      min-width: 50px;
-      text-align: center;
-    }
-
-    .service-text h4 {
-      color: #d4af37;
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .service-text p {
-      color: #999;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    @media(max-width: 768px) {
-      h1 { font-size: 36px; }
-      .section-title { font-size: 30px; }
-      .hero p, .section-text { font-size: 16px; }
-      .navbar { padding: 15px 5%; }
-      .brand { font-size: 24px; }
-      .section { padding: 80px 5%; }
-      .modal-content { padding: 28px 20px; margin: 10px; max-width: 95%; }
-      .modal-title { font-size: 20px; }
-      .phone-group select { width: 110px; min-width: 110px; font-size: 13px; }
-      .services-highlight { padding: 30px 20px; }
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Cairo', sans-serif; background: #050505; color: white; line-height: 1.8; overflow-x: hidden; }
+    
+    /* خلفيات متوهجة ذهبية */
+    .bg-glow { position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.15; z-index: -1; pointer-events: none; }
+    .glow-1 { width: 600px; height: 600px; background: radial-gradient(circle, #d4af37, #b8941f, transparent 70%); top: -200px; left: -200px; animation: floatGlow 8s ease-in-out infinite; }
+    .glow-2 { width: 500px; height: 500px; background: radial-gradient(circle, #e6c458, #c9a84c, transparent 70%); top: 30%; right: -200px; animation: floatGlow 10s ease-in-out infinite reverse; }
+    .glow-3 { width: 450px; height: 450px; background: radial-gradient(circle, #f0cf62, #d4af37, transparent 70%); bottom: -150px; left: 25%; animation: floatGlow 7s ease-in-out infinite; }
+    .glow-4 { width: 400px; height: 400px; background: radial-gradient(circle, #d4af37, #997a1d, transparent 70%); top: 55%; left: -150px; animation: floatGlow 9s ease-in-out infinite alternate; }
+    @keyframes floatGlow { 0%,100% { transform: translate(0,0) scale(1); opacity: 0.1; } 50% { transform: translate(20px,-20px) scale(1.1); opacity: 0.18; } }
+    
+    /* شريط التنقل */
+    .navbar { width: 100%; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; z-index: 1000; backdrop-filter: blur(25px); background: rgba(0,0,0,0.85); border-bottom: 1px solid rgba(212,175,55,0.3); }
+    .brand { font-family: 'Cinzel', serif; font-size: 32px; color: #d4af37; letter-spacing: 4px; font-weight: bold; text-shadow: 0 0 25px rgba(212,175,55,0.5); }
+    .brand span { display: block; font-size: 11px; letter-spacing: 8px; color: #d4af37; margin-top: -5px; opacity: 0.8; }
+    .menu-icon { font-size: 28px; color: #d4af37; cursor: pointer; display: none; }
+    .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-links a { color: #ccc; text-decoration: none; font-size: 15px; font-weight: 500; transition: 0.3s; padding: 8px 0; border-bottom: 2px solid transparent; }
+    .nav-links a:hover { color: #d4af37; border-bottom-color: #d4af37; text-shadow: 0 0 8px rgba(212,175,55,0.5); }
+    .lang-toggle { border: 1px solid #d4af37; background: transparent; color: #d4af37; padding: 8px 20px; border-radius: 50px; cursor: pointer; transition: 0.3s; font-weight: bold; font-family: 'Cairo', sans-serif; }
+    .lang-toggle:hover { background: #d4af37; color: #000; box-shadow: 0 0 20px rgba(212,175,55,0.5); }
+    
+    /* الصفحة الجانبية */
+    .side-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: #0a0a0a; border-left: 1px solid rgba(212,175,55,0.4); z-index: 2000; transition: 0.4s ease; padding: 80px 25px; display: flex; flex-direction: column; gap: 25px; backdrop-filter: blur(20px); }
+    .side-menu.open { right: 0; }
+    .side-menu a { color: #ccc; text-decoration: none; font-size: 18px; padding: 12px 0; border-bottom: 1px solid rgba(212,175,55,0.2); transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+    .side-menu a:hover { color: #d4af37; padding-right: 10px; text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+    .close-menu { position: absolute; top: 20px; left: 20px; font-size: 28px; color: #d4af37; cursor: pointer; }
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1999; display: none; }
+    
+    /* البطل الرئيسي */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 140px 8% 80px; text-align: center; }
+    .hero-content { max-width: 950px; }
+    .premium-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px; border: 1px solid rgba(212,175,55,0.4); border-radius: 50px; color: #d4af37; margin-bottom: 30px; background: rgba(212,175,55,0.08); font-size: 14px; box-shadow: 0 0 15px rgba(212,175,55,0.2); }
+    h1 { font-size: 64px; line-height: 1.3; font-weight: 800; background: linear-gradient(to bottom, #fff, #ddd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; }
+    .gold { color: #d4af37; -webkit-text-fill-color: #d4af37; text-shadow: 0 0 15px rgba(212,175,55,0.5); }
+    .hero p { color: #bdbdbd; font-size: 19px; margin-bottom: 40px; }
+    .btn { padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; cursor: pointer; border: none; font-family: 'Cairo', sans-serif; }
+    .btn-primary { background: linear-gradient(135deg, #d4af37, #f0cf62); color: #000; box-shadow: 0 10px 30px rgba(212,175,55,0.4); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 45px rgba(212,175,55,0.7); }
+    .btn-secondary { border: 2px solid rgba(212,175,55,0.6); color: #d4af37; background: transparent; }
+    .btn-secondary:hover { background: #d4af37; color: #000; box-shadow: 0 0 20px rgba(212,175,55,0.4); }
+    .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    
+    /* حاسبة العائد */
+    .roi-calculator { max-width: 600px; margin: 50px auto 0; background: linear-gradient(180deg, #111, #0a0a0a); border: 1px solid rgba(212,175,55,0.3); border-radius: 30px; padding: 35px; text-align: center; box-shadow: 0 0 40px rgba(212,175,55,0.1); }
+    .roi-calculator h3 { color: #d4af37; font-size: 24px; margin-bottom: 10px; text-shadow: 0 0 10px rgba(212,175,55,0.3); }
+    .calc-slider { margin-bottom: 25px; text-align: right; }
+    .calc-slider label { display: block; color: #ccc; margin-bottom: 10px; }
+    .calc-slider input { width: 100%; height: 6px; -webkit-appearance: none; background: #222; border-radius: 5px; }
+    .calc-slider input::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; background: #d4af37; border-radius: 50%; cursor: pointer; box-shadow: 0 0 15px #d4af37; }
+    .calc-value { display: flex; justify-content: space-between; margin-top: 10px; color: #d4af37; font-weight: bold; }
+    .calc-result { background: rgba(212,175,55,0.12); border-radius: 20px; padding: 25px; margin-top: 25px; box-shadow: 0 0 20px rgba(212,175,55,0.1); }
+    .calc-result .result-number { font-size: 48px; font-weight: 800; color: #d4af37; text-shadow: 0 0 20px rgba(212,175,55,0.7); letter-spacing: 2px; }
+    
+    /* كبسة الخصم */
+    .discount-cta { margin: 40px auto 0; text-align: center; }
+    .discount-btn { background: linear-gradient(135deg, #d4af37, #f0cf62, #d4af37); background-size: 200% 200%; animation: gradientShift 3s ease infinite; color: #000; padding: 20px 50px; font-size: 24px; border-radius: 70px; box-shadow: 0 0 35px rgba(212,175,55,0.8); display: inline-flex; align-items: center; gap: 15px; border: none; cursor: pointer; font-weight: 800; transition: 0.3s; font-family: 'Cairo', sans-serif; }
+    .discount-btn:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 0 55px rgba(212,175,55,1); }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .discount-btn i { font-size: 32px; animation: iconShake 1s ease infinite; }
+    @keyframes iconShake { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(15deg); } 75% { transform: rotate(-15deg); } }
+    .small-note { margin-top: 12px; font-size: 13px; color: #d4af37; opacity: 0.8; }
+    
+    /* قسم الألم والحل */
+    .pain-section { padding: 80px 8%; background: linear-gradient(135deg, #0a0a0a, #050505); }
+    .pain-container { display: flex; flex-wrap: wrap; gap: 40px; max-width: 1300px; margin: auto; align-items: center; }
+    .pain-col { flex: 1; min-width: 280px; }
+    .pain-title { font-size: 36px; color: #d4af37; margin-bottom: 30px; text-align: center; text-shadow: 0 0 15px rgba(212,175,55,0.3); }
+    .pain-list { background: rgba(17,17,17,0.7); border-radius: 24px; padding: 30px; border: 1px solid rgba(212,175,55,0.2); }
+    .pain-item { display: flex; align-items: center; gap: 15px; padding: 18px 0; border-bottom: 1px solid rgba(212,175,55,0.1); transition: 0.3s; }
+    .pain-item:hover { transform: translateX(-8px); }
+    .pain-icon { width: 50px; height: 50px; background: rgba(212,175,55,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #d4af37; }
+    .pain-text { flex: 1; }
+    .pain-text h4 { color: #d4af37; margin-bottom: 5px; font-size: 18px; }
+    .pain-text p { color: #bbb; font-size: 14px; line-height: 1.6; }
+    .solution-list { background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.02)); border-radius: 24px; padding: 30px; border: 1px solid rgba(212,175,55,0.3); box-shadow: 0 0 30px rgba(212,175,55,0.1); }
+    .solution-item { display: flex; align-items: center; gap: 15px; padding: 18px 0; border-bottom: 1px solid rgba(212,175,55,0.1); transition: 0.3s; }
+    .solution-item:hover { transform: translateX(-8px); }
+    .solution-icon { width: 50px; height: 50px; background: rgba(212,175,55,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #d4af37; box-shadow: 0 0 10px rgba(212,175,55,0.3); }
+    .solution-text { flex: 1; }
+    .solution-text h4 { color: #d4af37; margin-bottom: 5px; font-size: 18px; }
+    .solution-text p { color: #bbb; font-size: 14px; line-height: 1.6; }
+    .pain-arrow { display: flex; align-items: center; justify-content: center; font-size: 48px; color: #d4af37; opacity: 0.7; }
+    @media (max-width: 768px) { .pain-arrow { transform: rotate(90deg); } .pain-title { font-size: 28px; } }
+    
+    /* الأقسام العامة */
+    .section { padding: 100px 8%; }
+    .section-dark { background: rgba(10,10,10,0.5); }
+    .section-title { font-size: 44px; text-align: center; color: #d4af37; margin-bottom: 15px; text-shadow: 0 0 25px rgba(212,175,55,0.3); }
+    .section-subtitle { text-align: center; color: #aaa; margin-bottom: 50px; font-size: 17px; }
+    .cards, .case-studies, .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+    .card, .case-card { background: linear-gradient(180deg, #111, #0a0a0a); border: 1px solid rgba(212,175,55,0.2); border-radius: 20px; padding: 35px 25px; transition: 0.4s; text-align: center; }
+    .card:hover, .case-card:hover { transform: translateY(-8px); border-color: #d4af37; box-shadow: 0 25px 50px rgba(212,175,55,0.2); }
+    .card h3, .case-card h3 { color: #d4af37; margin-bottom: 12px; font-size: 20px; }
+    .card p, .case-card p { color: #bbb; font-size: 14px; line-height: 1.8; }
+    .card i, .case-card i { margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(212,175,55,0.5)); }
+    .case-stats { display: flex; justify-content: space-between; margin: 15px 0; }
+    .case-stat { text-align: center; }
+    .case-stat .number { font-size: 26px; font-weight: 800; color: #d4af37; text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+    .case-quote { background: rgba(212,175,55,0.08); padding: 15px; border-right: 3px solid #d4af37; margin-top: 15px; font-style: italic; font-size: 13px; text-align: right; }
+    
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 50px; }
+    .process-step { text-align: center; padding: 30px 20px; background: rgba(17,17,17,0.6); border-radius: 20px; transition: 0.3s; }
+    .process-step:hover { transform: translateY(-5px); background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.3); }
+    .step-number { width: 60px; height: 60px; background: linear-gradient(135deg, #d4af37, #f0cf62); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; margin: 0 auto 15px; box-shadow: 0 0 25px rgba(212,175,55,0.5); }
+    
+    .faq-item { background: #0d0d0d; border: 1px solid rgba(212,175,55,0.15); border-radius: 15px; padding: 20px; margin-bottom: 12px; transition: 0.3s; }
+    .faq-item:hover { border-color: rgba(212,175,55,0.5); background: #0f0f0f; box-shadow: 0 0 15px rgba(212,175,55,0.1); }
+    .faq-item h3 { color: #d4af37; margin-bottom: 8px; font-size: 17px; display: flex; align-items: center; gap: 8px; }
+    
+    /* رسالة المؤسس - أيقونة فقط */
+    .founder-message { background: linear-gradient(135deg, #111, #0a0a0a); border: 1px solid rgba(212,175,55,0.3); border-radius: 24px; padding: 40px; margin-top: 40px; text-align: center; box-shadow: 0 0 30px rgba(212,175,55,0.1); }
+    .founder-avatar { width: 110px; height: 110px; background: linear-gradient(135deg, #d4af37, #f0cf62); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 3px solid #d4af37; box-shadow: 0 0 25px rgba(212,175,55,0.5); animation: avatarGlow 2s infinite; }
+    .founder-avatar i { font-size: 52px; color: #000; filter: drop-shadow(0 0 10px rgba(0,0,0,0.3)); }
+    @keyframes avatarGlow { 0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.5); } 50% { box-shadow: 0 0 0 20px rgba(212,175,55,0); } 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); } }
+    .founder-message h3 { color: #d4af37; font-size: 24px; text-shadow: 0 0 10px rgba(212,175,55,0.3); }
+    .founder-message p { color: #bbb; line-height: 1.9; margin: 15px 0; }
+    .founder-signature { font-family: 'Cinzel', serif; color: #d4af37; margin-top: 15px; font-size: 18px; }
+    
+    .social-final { text-align: center; margin-top: 40px; }
+    .social-final p { color: #d4af37; margin-bottom: 20px; font-size: 18px; font-weight: 600; text-shadow: 0 0 8px rgba(212,175,55,0.3); }
+    .social-icons { display: flex; gap: 35px; justify-content: center; flex-wrap: wrap; }
+    .social-icon-card { text-align: center; transition: 0.3s; }
+    .social-icon-card:hover { transform: translateY(-8px); }
+    .social-icon-card a { display: block; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(180deg, #111, #0a0a0a); border: 2px solid rgba(212,175,55,0.4); display: flex; align-items: center; justify-content: center; color: #d4af37; font-size: 38px; text-decoration: none; transition: 0.3s; margin: 0 auto 10px; }
+    .social-icon-card a:hover { border-color: #d4af37; box-shadow: 0 0 30px rgba(212,175,55,0.6); color: #fff; background: rgba(212,175,55,0.15); }
+    .social-icon-card span { color: #d4af37; font-size: 14px; font-weight: 500; display: block; margin-top: 8px; }
+    
+    .footer { padding: 50px 8% 30px; background: #000; border-top: 1px solid rgba(212,175,55,0.2); }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 35px; }
+    .footer-col h4 { color: #d4af37; margin-bottom: 15px; text-shadow: 0 0 8px rgba(212,175,55,0.2); }
+    .footer-col p, .footer-col a { color: #777; font-size: 13px; text-decoration: none; display: block; margin-bottom: 8px; transition: 0.3s; }
+    .footer-col a:hover { color: #d4af37; transform: translateX(-5px); text-shadow: 0 0 5px rgba(212,175,55,0.3); }
+    .footer-bottom { text-align: center; color: #555; font-size: 12px; padding-top: 30px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); }
+    
+    /* النوافذ المنبثقة */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(12px); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; }
+    .modal-content { max-width: 520px; width: 100%; background: #0f0f0f; border: 1px solid rgba(212,175,55,0.4); border-radius: 28px; padding: 35px 30px; position: relative; box-shadow: 0 0 50px rgba(212,175,55,0.2); }
+    .modal-close { position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.05); border: none; color: #d4af37; font-size: 20px; cursor: pointer; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+    .modal-close:hover { background: rgba(212,175,55,0.2); transform: rotate(90deg); }
+    .modal-icon { text-align: center; font-size: 52px; margin-bottom: 15px; color: #d4af37; filter: drop-shadow(0 0 15px rgba(212,175,55,0.5)); }
+    .modal-title { font-size: 26px; text-align: center; color: #d4af37; margin-bottom: 8px; font-weight: 800; }
+    .modal-subtitle { text-align: center; color: #aaa; font-size: 14px; margin-bottom: 30px; }
+    .modal-form input, .modal-form select { width: 100%; padding: 14px 16px; background: #0a0a0a; border: 1px solid #222; border-radius: 14px; color: white; margin-bottom: 15px; font-size: 15px; transition: 0.3s; font-family: 'Cairo', sans-serif; }
+    .modal-form input:focus, .modal-form select:focus { border-color: #d4af37; outline: none; box-shadow: 0 0 20px rgba(212,175,55,0.3); }
+    .phone-group { display: flex; gap: 12px; margin-bottom: 15px; }
+    .phone-group select { width: 140px; margin-bottom: 0; background: #0a0a0a; border: 1px solid #222; border-radius: 14px; color: white; padding: 14px 10px; font-family: 'Cairo', sans-serif; }
+    .btn-modal-submit { width: 100%; padding: 15px; background: linear-gradient(135deg, #d4af37, #f0cf62); color: #000; border: none; border-radius: 14px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Cairo', sans-serif; }
+    .btn-modal-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(212,175,55,0.5); }
+    .success-message { display: none; text-align: center; padding: 20px; }
+    .success-message .success-icon { font-size: 60px; color: #4CAF50; margin-bottom: 15px; }
+    
+    @media (max-width: 768px) { h1 { font-size: 36px; } .section-title { font-size: 30px; } .navbar { padding: 15px 5%; } .menu-icon { display: block; } .nav-links { display: none; } .discount-btn { padding: 14px 30px; font-size: 18px; } .discount-btn i { font-size: 22px; } .social-icon-card a { width: 60px; height: 60px; font-size: 28px; } .pain-title { font-size: 28px; } }
   </style>
 </head>
 <body>
 
-  <div class="bg-glow glow-1"></div>
-  <div class="bg-glow glow-2"></div>
-  <div class="bg-glow glow-3"></div>
-  <div class="bg-glow glow-4"></div>
+<div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div><div class="bg-glow glow-4"></div>
 
-  <nav class="navbar">
-    <div class="brand">LUMORA<span>GROWTH AGENCY</span></div>
+<!-- شريط التنقل -->
+<nav class="navbar">
+  <div class="brand">LUMORA<span>GROWTH AGENCY</span></div>
+  <div class="menu-icon" onclick="openSideMenu()"><i class="fas fa-bars"></i></div>
+  <div class="nav-links">
+    <a href="#home">الرئيسية</a>
+    <a href="#pain">المعاناة والحل</a>
+    <a href="#about">من نحن</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#cases">قصص نجاح</a>
+    <a href="#contact">اتصل بنا</a>
     <button class="lang-toggle" onclick="toggleLanguage()">English</button>
-  </nav>
+  </div>
+</nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="premium-badge">
-        <i class="fab fa-meta"></i>
-        <span>متخصصون في إعلانات ميتا للمحامين</span>
-      </div>
-      <h1 id="mainTitle">نحوّل مكاتب المحاماة إلى <span class="gold">علامات قانونية رائدة</span><br>عبر إعلانات فيسبوك وإنستغرام</h1>
-      <p id="mainDesc">في <strong>Lumora Growth Agency</strong>، لا نؤمن بالصدفة أو الحظ. نؤمن بالاستراتيجيات المدروسة والبيانات الدقيقة. تخصصنا الوحيد هو <span class="gold">إعلانات ميتا (Meta Ads)</span> للمحامين، حيث نستخدم تقنيات استهداف متقدمة جداً لنصل إلى عملائك المحتملين في اللحظة المناسبة، بالرسالة المناسبة، وعلى المنصة التي يقضون فيها معظم أوقاتهم. نحن لا نبيعك مشاهدات أو إعجابات... نبيعك <strong>استشارات قانونية مؤهلة وعملاء يوقعون عقوداً</strong>.</p>
-      <div class="cta-group">
-        <button onclick="openConsultationModal()" class="btn btn-primary pulse"><i class="fas fa-calendar-check"></i> احجز استشارتك المجانية</button>
-        <a href="https://wa.me/963986148756?text=مرحباً،%20أرغب%20بطلب%20استشارة%20فورية" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> واتساب فوري</a>
-      </div>
-    </div>
-  </section>
+<!-- القائمة الجانبية -->
+<div class="side-menu" id="sideMenu">
+  <div class="close-menu" onclick="closeSideMenu()"><i class="fas fa-times"></i></div>
+  <a href="#home" onclick="closeSideMenu()"><i class="fas fa-home"></i> الرئيسية</a>
+  <a href="#pain" onclick="closeSideMenu()"><i class="fas fa-heart-broken"></i> المعاناة والحل</a>
+  <a href="#about" onclick="closeSideMenu()"><i class="fas fa-users"></i> من نحن</a>
+  <a href="#services" onclick="closeSideMenu()"><i class="fas fa-briefcase"></i> خدماتنا</a>
+  <a href="#cases" onclick="closeSideMenu()"><i class="fas fa-chart-line"></i> قصص نجاح</a>
+  <a href="#contact" onclick="closeSideMenu()"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+  <button class="lang-toggle" style="margin-top: 20px; width: 100%;" onclick="toggleLanguage()">English</button>
+</div>
+<div class="overlay" id="overlay" onclick="closeSideMenu()"></div>
 
-  <section class="section section-dark">
-    <h2 class="section-title" id="whyDifferentTitle">لماذا Lumora مختلفة؟</h2>
-    <p class="section-subtitle" id="whyDifferentSubtitle">تخصصنا 100% في إعلانات ميتا... لا نوزع جهودنا على منصات أخرى</p>
-    <p class="section-text" id="whyDifferentDesc">معظم وكالات التسويق تشتت جهودها بين جوجل، تيك توك، لينكد إن، وتويتر. والنتيجة؟ حملات ضعيفة، ميزانيات مهدرة، وعملاء محتملون منخفضو الجودة. في <strong>Lumora</strong>، قررنا أن نكون الأفضل في مجال واحد بدلاً من أن نكون متوسطين في مجالات عدة. <span class="gold">تركيزنا حصري على فيسبوك وإنستغرام</span> لأننا نؤمن أن العملاء القانونيين موجودين هناك. نعرف بالضبط كيف نستهدفهم: حسب موقعهم، مهنتهم، اهتماماتهم القانونية، سلوكهم الشرائي، وحتى تفاعلهم مع صفحات المنافسين. نحن لا نرمي الشبكة وننتظر... نحن نصطاد بدقة جراحية.</p>
-
-    <div class="cards">
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fab fa-meta"></i></div></div><h3>تخصصنا في إعلانات ميتا</h3><p>نحن لا نعمل على جوجل أو أي منصات أخرى. <strong class="gold">تخصصنا الوحيد هو إعلانات فيسبوك وإنستغرام (Meta Ads)</strong> للمحامين. نعرف بالضبط كيف نصل لعملائك المحتملين من خلال استهداف دقيق جداً. هذه ليست مجرد خدمة إضافية لنا... هذا هو كل ما نفعله، ولهذا نحن الأفضل فيه.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-bullseye"></i></div></div><h3>استهداف دقيق جداً</h3><p>لا نضيّع ميزانيتك على أشخاص غير مهتمين. نصل إلى الأشخاص الذين يبحثون فعلياً عن خدمات قانونية في تخصصك. نستهدفهم بالموقع الجغرافي، المهنة، الاهتمامات القانونية، السلوك الشرائي، وحتى الشركات التي يعملون بها.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-gem"></i></div></div><h3>هوية قانونية فاخرة</h3><p>المظهر الاحترافي ليس رفاهية... إنه ضرورة لبناء الثقة. نصمم إعلانات وصفحات هبوط وهوية رقمية تعكس قوة مكتبك وهيبتك القانونية، مما يجعل العميل يشعر أنه أمام مكتب محاماة كبير قبل أول اتصال.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-chart-line"></i></div></div><h3>أنظمة تحويل ذكية</h3><p>الإعلان الجيد يجلب الزوار... لكن النظام الذكي يحولهم إلى عملاء. من أول نقرة على الإعلان، مروراً بصفحة الهبوط، وصولاً إلى نموذج الحجز والمكالمة الهاتفية، نصمم كل خطوة لزيادة معدل التحويل وتقليل تكلفة اكتساب العميل.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-chart-pie"></i></div></div><h3>تقارير شفافة</h3><p>نحن لا نخفي شيئاً عنك. نقدم تقارير دورية مفصلة توضح بدقة: كم أنفقت، كم استشارة حصلت، كم كلفتك كل استشارة، وأي إعلان يحقق أفضل أداء. أنت تتحكم بالقرار، ونحن ننفذ.</p></div>
-      <div class="card"><div class="card-icon-wrapper"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner"><i class="fas fa-headset"></i></div></div><h3>دعم مستمر</h3><p>فريقنا المتخصص ليس بعيداً عنك. نحن متاحون للإجابة على استفساراتك، تعديل الاستراتيجيات، وتحسين الأداء بناءً على تطور احتياجات مكتبك ونموه. أنت لست مجرد عميل... أنت شريك.</p></div>
+<!-- القسم الرئيسي -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="premium-badge"><i class="fas fa-crown"></i> نظام متكامل لجلب القضايا للمحامين</div>
+    <h1>نبني لك <span class="gold">منظومة متكاملة</span> تجلب القضايا والاستشارات القانونية المؤهلة</h1>
+    <p>في <strong>Lumora</strong>، لا نكتفي بالإعلانات. نبني لك نظاماً متكاملاً مهمته الوحيدة: جلب القضايا الحقيقية والعملاء المؤهلين لمكتبك.</p>
+    <div class="cta-group">
+      <button onclick="openConsultationModal()" class="btn btn-primary"><i class="fas fa-calendar-check"></i> احجز استشارتك المجانية</button>
+      <a href="https://wa.me/963986148756?text=مرحباً،%20أرغب%20باستشارة%20حول%20جلب%20القضايا%20لمكتبي" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> واتساب فوري</a>
     </div>
 
-    <!-- ========== قسم الخدمات الجديد ========== -->
-    <div class="services-highlight">
-      <h3 style="text-align: center; color: #d4af37; font-size: 28px; margin-bottom: 20px;"><i class="fas fa-cogs"></i> خدماتنا المتكاملة</h3>
-      <p style="text-align: center; color: #999; margin-bottom: 30px;">نحن لا نقدم مجرد إعلانات... نقدم منظومة تسويق قانوني متكاملة</p>
-      <div class="services-grid">
-        <div class="service-item">
-          <div class="service-icon"><i class="fab fa-meta"></i></div>
-          <div class="service-text">
-            <h4>إدارة حملات إعلانات ميتا</h4>
-            <p>تخطيط، إنشاء، إدارة، وتحسين حملات إعلانات فيسبوك وإنستغرام بشكل يومي لضمان أفضل عائد استثمار وأقل تكلفة لكل عميل.</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-          <div class="service-text">
-            <h4>تصميم وإدارة الصفحات</h4>
-            <p>تصميم احترافي لصفحات فيسبوك وإنستغرام تعكس هوية مكتبك القانونية، مع إدارة يومية للمحتوى والرد على الاستفسارات وبناء الثقة.</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"><i class="fas fa-file-alt"></i></div>
-          <div class="service-text">
-            <h4>تصميم صفحات هبوط</h4>
-            <p>صفحات هبوط مصممة خصيصاً للتحويل، تشرح خدماتك القانونية بطريقة مقنعة وتحث الزائر على ترك بياناته وطلب استشارة.</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"><i class="fas fa-chart-simple"></i></div>
-          <div class="service-text">
-            <h4>تحليل البيانات والتقارير</h4>
-            <p>تقارير أسبوعية وشهرية مفصلة توضح أداء كل حملة، عدد العملاء المحتملين، تكلفة الاستشارة، وأهم المؤشرات.</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="service-text">
-            <h4>نظام تأهيل العملاء</h4>
-            <p>نقوم بتصفية العملاء المحتملين قبل وصولهم إليك عبر أسئلة ذكية في الإعلان ونموذج الحجز، لتتلقى فقط استشارات جدية.</p>
-          </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
-          <div class="service-text">
-            <h4>استشارات تسويق قانوني</h4>
-            <p>جلسات استراتيجية مع خبرائنا لوضع خطة تسويق قانونية متكاملة تناسب تخصص مكتبك وسوقك المستهدف.</p>
-          </div>
-        </div>
+    <!-- حاسبة العائد -->
+    <div class="roi-calculator">
+      <h3><i class="fas fa-chart-line"></i> كم تربح من كل قضية؟</h3>
+      <div class="calc-slider">
+        <label><i class="fas fa-gavel"></i> متوسط قيمة القضية</label>
+        <input type="range" id="caseValue" min="1000" max="50000" step="1000" value="15000">
+        <div class="calc-value"><span>$</span><span id="caseValueDisplay">15,000</span></div>
+      </div>
+      <div class="calc-slider">
+        <label><i class="fas fa-chart-simple"></i> عدد القضايا المستهدف شهرياً</label>
+        <input type="range" id="monthlyCases" min="1" max="20" step="1" value="5">
+        <div class="calc-value"><span>قضية/شهر</span><span id="monthlyCasesDisplay">5</span></div>
+      </div>
+      <div class="calc-result">
+        <div class="result-number" id="roiResult">$75,000</div>
+        <p>الإيرادات الشهرية المتوقعة</p>
+        <small style="color:#aaa;">*يتحقق خلال 3-6 أشهر من تشغيل المنظومة</small>
       </div>
     </div>
-  </section>
 
-  <section class="section">
-    <h2 class="section-title" id="smartMarketingTitle"><i class="fab fa-meta"></i> إعلانات ميتا للمحامين</h2>
-    <p class="section-subtitle" id="smartMarketingSubtitle">تخصصنا 100% في فيسبوك وإنستغرام لاستهداف العملاء القانونيين</p>
-    <p class="section-text" id="smartMarketingDesc">
-      في <strong>Lumora</strong> لا نشتت جهودنا. تركيزنا حصري على <span class="gold">منصة ميتا (فيسبوك + إنستغرام)</span> لأنها المكان الذي يقضي فيه عملاؤك المحتملون وقتهم. هل تعلم أن مستخدم فيسبوك العادي يقضي أكثر من 40 دقيقة يومياً على المنصة؟ هذا يعني أن لديك نافذة ذهبية للوصول إليه.
-      <br><br>
-      <strong>تقنيات الاستهداف المتقدمة التي نستخدمها:</strong><br>
-      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف الأشخاص الذين تفاعلوا مع صفحات قانونية مشابهة<br>
-      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف الموظفين في الشركات والمؤسسات الكبرى حسب القطاع<br>
-      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف المهتمين بقضايا محددة (طلاق، هجرة، إصابات، عقود، جنائي)<br>
-      <i class="fas fa-check-circle" style="color:#d4af37;"></i> إعادة استهداف (Retargeting) زوار موقعك الإلكتروني الذين لم يتحولوا بعد<br>
-      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف الشبيه بجمهور عملائك الحاليين (Lookalike Audiences)<br>
-      <i class="fas fa-check-circle" style="color:#d4af37;"></i> استهداف حسب العمر، الجنس، المستوى التعليمي، الدخل، والحالة الاجتماعية<br><br>
-      <span class="gold">النتيجة:</span> إعلانات تظهر فقط للأشخاص الذين يحتاجون خدماتك القانونية فعلاً، وبميزانية أقل وتكلفة استشارة منخفضة بشكل مذهل مقارنة بالطرق التقليدية.
-    </p>
-  </section>
-
-  <section class="section section-dark">
-    <h2 class="section-title" id="whyChooseTitle">لماذا تختار Lumora؟</h2>
-    <p class="section-subtitle" id="whyChooseSubtitle">مزايا تنافسية تميزنا عن غيرنا</p>
-
-    <div class="stats-grid">
-      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fab fa-meta"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">تخصص حصري</span><span class="stat-label" style="display:block;">نعمل فقط على إعلانات ميتا للمحامين، وهذا كل ما نفعله. خبير في مجال واحد أفضل من مبتدئ في عشرة.</span></div>
-      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-bolt"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">نتائج سريعة</span><span class="stat-label" style="display:block;">معظم عملائنا يشهدون تحسناً ملحوظاً في عدد الاستشارات خلال أول 30 يوماً من إطلاق الحملات.</span></div>
-      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-puzzle-piece"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">استراتيجيات مخصصة</span><span class="stat-label" style="display:block;">لا يوجد قالب جاهز. كل مكتب محاماة له تخصصه وجمهوره. نضع خطة فريدة تناسب احتياجاتك بدقة.</span></div>
-      <div class="stat-card"><div class="card-icon-wrapper" style="margin-bottom:15px;"><div class="card-icon-glow"></div><div class="card-icon-ring"></div><div class="card-icon-inner" style="font-size:38px;"><i class="fas fa-chart-line"></i></div></div><span class="stat-label" style="color:#d4af37;font-size:18px;font-weight:bold;display:block;margin-bottom:8px;">تحسين مستمر</span><span class="stat-label" style="display:block;">نحلل النتائج يومياً ونطور الأداء أسبوعياً. الإعلانات الراكدة تخسر المال، ونحن لا نقبل بذلك.</span></div>
+    <!-- كبسة الخصم -->
+    <div class="discount-cta">
+      <button onclick="openConsultationModal()" class="discount-btn"><i class="fas fa-gift"></i> اطلب الخصم 30% الآن <i class="fas fa-arrow-left"></i></button>
+      <p class="small-note">*لأول 5 عملاء فقط. العرض محدود.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section">
-    <h2 class="section-title" id="howWeWorkTitle">كيف نعمل؟</h2>
-    <p class="section-subtitle" id="howWeWorkSubtitle">منهجية واضحة للوصول إلى نتائج مضمونة</p>
-    <div class="process-steps">
-      <div class="process-step"><div class="step-number">١</div><h3><i class="fas fa-search"></i> تحليل وتخطيط</h3><p>ندرس مكتبك بدقة: تخصصك القانوني، منافسيك، جمهورك المستهدف، نقاط قوتك وضعفك. نخرج بخطة إعلانية مخصصة تقوم على بيانات حقيقية وليس تخمينات.</p></div>
-      <div class="process-step"><div class="step-number">٢</div><h3><i class="fas fa-palette"></i> بناء الهوية الإعلانية</h3><p>نصمم إعلانات وصفحات هبوط ورسائل تسويقية تعكس قوة مكتبك وهيبتك القانونية. الهدف: أن يشعر العميل بالثقة قبل أن يتصل بك.</p></div>
-      <div class="process-step"><div class="step-number">٣</div><h3><i class="fab fa-meta"></i> إطلاق حملات ميتا</h3><p>نطلق حملات فيسبوك وإنستغرام باستخدام استراتيجيات استهداف دقيقة جداً. نبدأ بميزانية اختبارية صغيرة ثم نوسع بناءً على النتائج الفعلية.</p></div>
-      <div class="process-step"><div class="step-number">٤</div><h3><i class="fas fa-chart-line"></i> تحسين مستمر</h3><p>نحلل النتائج يومياً، نجري تجارب (A/B Testing)، نوقف الإعلانات الضعيفة، ونضاعف ميزانية الإعلانات الفائزة. نضمن لك أفضل عائد على كل ريال تنفقه.</p></div>
-    </div>
-  </section>
-
-  <section class="section section-dark">
-    <h2 class="section-title" id="faqTitle"><i class="fas fa-question-circle"></i> أسئلة شائعة</h2>
-    <div style="max-width:800px;margin:40px auto 0;">
-      <div class="faq-item"><h3><i class="fas fa-chart-line"></i> لماذا تركزون فقط على إعلانات ميتا؟</h3><p>لأن فيسبوك وإنستغرام هما المنصتان الوحيدتان اللتان تسمحان باستهداف دقيق جداً للمحامين. يمكننا استهداف الأشخاص بناءً على مهنتهم القانونية، اهتماماتهم بالقضايا، موقعهم الجغرافي، وحتى تفاعلهم مع صفحات منافسة. هذه الدقة غير متوفرة بنفس المستوى في أي منصة أخرى. ببساطة، نريد أن نكون الأفضل في شيء واحد بدلاً من أن نكون متوسطين في كل شيء.</p></div>
-      <div class="faq-item"><h3><i class="fas fa-coins"></i> كم تكلفة خدماتكم؟</h3><p>نقدم حلولاً مخصصة تبدأ من 500 دولار شهرياً للحملات الإعلانية (تذهب ميزانيتها بالكامل للإعلانات) بالإضافة إلى رسوم إدارة تتراوح حسب حجم الحملة وتعقيدها. نناقش كل التفاصيل بشفافية في الاستشارة المجانية ونقدم عرض سعر واضح دون أي رسوم خفية.</p></div>
-      <div class="faq-item"><h3><i class="fas fa-clock"></i> متى أبدأ برؤية النتائج؟</h3><p>معظم مكاتب المحاماة تبدأ بملاحظة زيادة ملحوظة في الاستشارات المؤهلة خلال أول 30-45 يوماً من إطلاق الحملات الإعلانية. نحتاج إلى أسبوعين لجمع البيانات الأولية وتحسين الاستهداف، ثم تبدأ النتائج في التسارع.</p></div>
-      <div class="faq-item"><h3><i class="fas fa-gavel"></i> هل تتعاملون مع جميع التخصصات القانونية؟</h3><p>نعم، لدينا خبرة واسعة في تسويق مختلف التخصصات عبر ميتا: قضايا الأسرة والطلاق، الهجرة والجنسية، الإصابات الشخصية والحوادث، القضايا الجنائية، قانون الشركات، العقود التجارية، قانون العمل، وغيرها. كل تخصص له استراتيجيته الخاصة التي نصممها خصيصاً له.</p></div>
-      <div class="faq-item"><h3><i class="fas fa-filter"></i> كيف أتأكد من جودة العملاء المحتملين؟</h3><p>نستخدم نظاماً متكاملاً لتأهيل العملاء المحتملين نشره في الإعلانات ونماذج الحجز. نسأل أسئلة تصفية ذكية تجعل فقط الأشخاص الجادين ذوي الحاجة الحقيقية يصلون إليك. هذا يعني أن الاستشارات التي تتلقاها ستكون أكثر احترافية وأعلى احتمالية للتحول إلى قضايا مدفوعة.</p></div>
-      <div class="faq-item"><h3><i class="fas fa-paint-brush"></i> هل تشمل خدماتكم تصميم الصفحات وإدارتها؟</h3><p>بالتأكيد. نقدم خدمة متكاملة تشمل تصميم هوية صفحات فيسبوك وإنستغرام الخاصة بمكتبك، بالإضافة إلى الإدارة اليومية: جدولة المحتوى، الرد على الاستفسارات، بناء الثقة، وتعزيز التفاعل. كل هذا يتم بطريقة احترافية تعكس هيبة عملك القانوني.</p></div>
-    </div>
-  </section>
-
-  <section class="section" style="text-align: center;">
-    <h2 class="section-title" id="contactTitle"><i class="fas fa-envelope"></i> تواصل معنا</h2>
-    <p class="section-subtitle" id="contactSubtitle">تابع الوكالة والمؤسس على إنستغرام</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/lumora.growth.agency?igsh=Mzc3eHM5NzBnaTZy" target="_blank" class="social-link" title="حساب الوكالة"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.instagram.com/hatem_dayob?igsh=MWN2ZDEwMzFkenQzcA==" target="_blank" class="social-link" title="حساب المؤسس"><i class="fas fa-user-tie"></i></a>
-    </div>
-    <div style="margin-top: 20px; color: #999; font-size: 14px;">
-      <p><strong style="color:#d4af37;"><i class="fas fa-crown"></i> Lumora Growth Agency</strong></p>
-      <p style="margin-top: 5px;">المؤسس: <strong style="color:#d4af37;">Hatem Dayob</strong> — خبير تسويق قانوني معتمد</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-col"><h4><i class="fas fa-gavel"></i> Lumora Agency</h4><p>وكالة تسويق قانوني <strong class="gold">متخصصة حصرياً في إعلانات ميتا (فيسبوك وإنستغرام)</strong> لمكاتب المحاماة. نحملك العملاء، وليس المشاهدات. خدمتنا تشمل إدارة الإعلانات، تصميم الصفحات، وإدارة الهوية الرقمية.</p></div>
-      <div class="footer-col"><h4><i class="fas fa-link"></i> روابط سريعة</h4><a href="#"><i class="fas fa-home"></i> الرئيسية</a><a href="#"><i class="fas fa-briefcase"></i> خدماتنا</a><a href="#"><i class="fas fa-building"></i> عن الوكالة</a><a href="#"><i class="fas fa-phone-alt"></i> اتصل بنا</a></div>
-      <div class="footer-col"><h4><i class="fas fa-share-alt"></i> تواصل معنا</h4><a href="https://wa.me/963986148756"><i class="fab fa-whatsapp"></i> واتساب</a><a href="https://www.instagram.com/lumora.growth.agency?igsh=Mzc3eHM5NzBnaTZy" target="_blank"><i class="fab fa-instagram"></i> الوكالة</a><a href="https://www.instagram.com/hatem_dayob?igsh=MWN2ZDEwMzFkenQzcA==" target="_blank"><i class="fas fa-user-tie"></i> المؤسس</a></div>
-    </div>
-    <div class="footer-bottom"><i class="far fa-copyright"></i> 2025 Lumora Growth Agency — جميع الحقوق محفوظة | <i class="fab fa-meta"></i> متخصصون في إعلانات ميتا للمحامين | <i class="fas fa-paint-brush"></i> تصميم وإدارة الصفحات</div>
-  </footer>
-
-  <!-- ========== نافذة الاستشارة المنبثقة ========== -->
-  <div class="modal-overlay" id="consultationModal">
-    <div class="modal-content" id="modalContent">
-      <button class="modal-close" onclick="closeConsultationModal()"><i class="fas fa-times"></i></button>
-      <div id="modalFormContainer">
-        <div class="modal-icon"><i class="fas fa-scale-balanced"></i></div>
-        <h2 class="modal-title" id="modalTitle">احجز استشارتك المجانية</h2>
-        <p class="modal-subtitle" id="modalSubtitle">املأ البيانات وسيتواصل معك فريق <strong>Lumora</strong> خلال ٢٤ ساعة لمناقشة كيف يمكننا جلب عملاء لمكتبك عبر إعلانات ميتا</p>
-        <form class="modal-form" id="modalForm">
-          <div class="form-group"><input type="text" id="modalName" placeholder="الاسم الكامل *" required></div>
-          <div class="form-group"><input type="text" id="modalFirm" placeholder="اسم مكتب المحاماة *" required></div>
-          <div class="form-group">
-            <select id="modalSpecialty" required>
-              <option value="">التخصص القانوني *</option>
-              <option>قضايا الطلاق والأسرة</option>
-              <option>الهجرة والجنسية</option>
-              <option>الإصابات والحوادث</option>
-              <option>القضايا الجنائية</option>
-              <option>قانون الشركات</option>
-              <option>تجاري وعقود</option>
-              <option>قانون العمل</option>
-              <option>آخر</option>
-            </select>
-          </div>
-          <div class="form-group"><input type="text" id="modalCountry" placeholder="الدولة / المدينة *" required></div>
-
-          <div class="form-group">
-            <label style="display:block;color:#999;font-size:13px;margin-bottom:6px;"><i class="fas fa-phone"></i> رقم الهاتف *</label>
-            <div class="phone-group">
-              <select id="countryCode" required>
-                <option value="">اختر الدولة</option>
-                <option value="+966">🇸🇦 السعودية +966</option>
-                <option value="+20">🇪🇬 مصر +20</option>
-                <option value="+971">🇦🇪 الإمارات +971</option>
-                <option value="+974">🇶🇦 قطر +974</option>
-                <option value="+965">🇰🇼 الكويت +965</option>
-                <option value="+968">🇴🇲 عمان +968</option>
-                <option value="+973">🇧🇭 البحرين +973</option>
-                <option value="+962">🇯🇴 الأردن +962</option>
-                <option value="+961">🇱🇧 لبنان +961</option>
-                <option value="+963">🇸🇾 سوريا +963</option>
-                <option value="+970">🇵🇸 فلسطين +970</option>
-                <option value="+964">🇮🇶 العراق +964</option>
-                <option value="+967">🇾🇪 اليمن +967</option>
-                <option value="+216">🇹🇳 تونس +216</option>
-                <option value="+213">🇩🇿 الجزائر +213</option>
-                <option value="+212">🇲🇦 المغرب +212</option>
-                <option value="+218">🇱🇾 ليبيا +218</option>
-                <option value="+249">🇸🇩 السودان +249</option>
-                <option value="+252">🇸🇴 الصومال +252</option>
-                <option value="+90">🇹🇷 تركيا +90</option>
-                <option value="+1">🇺🇸 أمريكا +1</option>
-                <option value="+44">🇬🇧 بريطانيا +44</option>
-                <option value="+33">🇫🇷 فرنسا +33</option>
-                <option value="+49">🇩🇪 ألمانيا +49</option>
-                <option value="+61">🇦🇺 أستراليا +61</option>
-                <option value="+81">🇯🇵 اليابان +81</option>
-                <option value="+86">🇨🇳 الصين +86</option>
-                <option value="+91">🇮🇳 الهند +91</option>
-                <option value="+92">🇵🇰 باكستان +92</option>
-                <option value="+60">🇲🇾 ماليزيا +60</option>
-                <option value="+62">🇮🇩 إندونيسيا +62</option>
-                <option value="+234">🇳🇬 نيجيريا +234</option>
-                <option value="+27">🇿🇦 جنوب أفريقيا +27</option>
-              </select>
-              <input type="tel" id="modalPhone" placeholder="أدخل رقم هاتفك *" required>
-            </div>
-          </div>
-
-          <div class="form-group"><input type="email" id="modalEmail" placeholder="البريد الإلكتروني *" required></div>
-          <button type="submit" class="btn-modal-submit" id="modalSubmitBtn"><i class="fas fa-paper-plane"></i> أرسل الطلب</button>
-        </form>
+<!-- قسم الألم والحل -->
+<section class="pain-section" id="pain">
+  <div class="pain-container">
+    <div class="pain-col">
+      <h2 class="pain-title"><i class="fas fa-heart-broken"></i> قبل Lumora... كان المحامون يعانون</h2>
+      <div class="pain-list">
+        <div class="pain-item"><div class="pain-icon"><i class="fas fa-funnel-dollar"></i></div><div class="pain-text"><h4>ميزانية إعلانية تُهدر</h4><p>ينفق آلاف الدولارات على إعلانات لا تجلب سوى مشاهدات، لا عملاء.</p></div></div>
+        <div class="pain-item"><div class="pain-icon"><i class="fas fa-clock"></i></div><div class="pain-text"><h4>وقت ثمين يضيع</h4><p>يقضي ساعات في التفكير والتسويق بدلاً من ممارسة القانون الحقيقي.</p></div></div>
+        <div class="pain-item"><div class="pain-icon"><i class="fas fa-users-slash"></i></div><div class="pain-text"><h4>عملاء غير مؤهلين</h4><p>يتلقى استشارات من أشخاص لا يملكون الجدية أو القدرة المالية.</p></div></div>
+        <div class="pain-item"><div class="pain-icon"><i class="fas fa-chart-line"></i></div><div class="pain-text"><h4>نمو متقطع</h4><p>يعتمد على الإحالات فقط، فإذا توقفت، توقف النمو معها.</p></div></div>
+        <div class="pain-item"><div class="pain-icon"><i class="fas fa-tachometer-alt"></i></div><div class="pain-text"><h4>ضغط نفسي مستمر</h4><p>القلق الدائم من أين سيأتي العميل القادم يسرق متعة المهنة.</p></div></div>
       </div>
-      <div class="success-message" id="successMessage">
-        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-        <h3>تم الإرسال بنجاح!</h3>
-        <p>شكراً لثقتك بـ <strong>Lumora Agency</strong></p>
-        <p style="margin-top: 8px;">سنتواصل معك خلال <strong style="color:#d4af37;">٢٤ ساعة</strong> لمناقشة حملتك الإعلانية</p>
+    </div>
+    
+    <div class="pain-arrow"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></div>
+    
+    <div class="pain-col">
+      <h2 class="pain-title"><i class="fas fa-lightbulb"></i> مع Lumora... الحل جذري ومتكامل</h2>
+      <div class="solution-list">
+        <div class="solution-item"><div class="solution-icon"><i class="fas fa-chart-line"></i></div><div class="solution-text"><h4>منظومة جلب قضايا آلية</h4><p>نظام متكامل يجلب لك العملاء المؤهلين تلقائياً، 24 ساعة يومياً.</p></div></div>
+        <div class="solution-item"><div class="solution-icon"><i class="fas fa-clock"></i></div><div class="solution-text"><h4>وفر وقتك للقانون</h4><p>نحن نتحمل التسويق بالكامل، وأنت تركز فقط على قضاياك وموكليك.</p></div></div>
+        <div class="solution-item"><div class="solution-icon"><i class="fas fa-filter"></i></div><div class="solution-text"><h4>نظام تأهيل ذكي</h4><p>يصل إليك فقط العملاء الجادون ذوو الحاجة الحقيقية والقدرة على الدفع.</p></div></div>
+        <div class="solution-item"><div class="solution-icon"><i class="fas fa-chart-simple"></i></div><div class="solution-text"><h4>نمو مستدام ومتصاعد</h4><p>كل شهر يزداد عدد قضاياك وتقل تكلفة اكتساب العميل الجديد.</p></div></div>
+        <div class="solution-item"><div class="solution-icon"><i class="fas fa-peace"></i></div><div class="solution-text"><h4>راحة نفسية وثقة بالمستقبل</h4><p>تخلص من القلق، واعلم أن قضايا جديدة في طريقها إليك باستمرار.</p></div></div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- أزرار عائمة -->
-  <div style="position:fixed;bottom:20px;left:20px;z-index:9999;display:flex;flex-direction:column;gap:10px;">
-    <button onclick="openConsultationModal()" class="btn btn-primary pulse" style="font-size:14px;"><i class="fas fa-calendar-check"></i> استشارة مجانية</button>
-    <a href="https://wa.me/963986148756?text=مرحباً،%20أرغب%20بطلب%20استشارة%20فورية" target="_blank" style="background:#111;color:#d4af37;padding:12px 18px;border-radius:50px;text-decoration:none;font-weight:bold;border:2px solid rgba(212,175,55,0.3);text-align:center;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;"><i class="fab fa-whatsapp"></i> واتساب</a>
+<!-- من نحن + أيقونة المؤسس -->
+<section class="section section-dark" id="about">
+  <h2 class="section-title"><i class="fas fa-users"></i> من نحن</h2>
+  <div class="founder-message">
+    <div class="founder-avatar">
+      <i class="fas fa-user-tie"></i>
+    </div>
+    <h3>رسالة حاتم ديوب - المؤسس</h3>
+    <p>"أنا حاتم، مؤسس Lumora. قبل أن أؤسس هذه الوكالة، كنت في مكانك تماماً. أعرف كم هو مرهق أن يكون لديك مكتب محاماة ممتاز لكن العملاء لا يأتون بالشكل الكافي. أعرف كم هو مؤلم أن ترى جهودك التسويقية تذهب هباءً لأن من يديرها لا يفهم خصوصية المهنة القانونية.</p>
+    <p>لهذا السبب أسست Lumora. لن نبيعك إعلانات، بل سنبني لك <strong>منظومة متكاملة</strong> تجلب لك القضايا وأنت مرتاح. نحن لا ننام حتى ترى النتائج. ثقتي كبيرة بأنك بعد 6 أشهر من العمل معنا، ستنسى أنك كنت تعاني من جلب العملاء أصلاً.</p>
+    <p>فريقنا ينتظرك. احجز استشارتك المجانية اليوم، وسأحرص بنفسي على متابعة ملفك."</p>
+    <div class="founder-signature"><i class="fas fa-signature"></i> حاتم ديوب | المؤسس والرئيس التنفيذي</div>
   </div>
+</section>
 
-  <script>
-    const TELEGRAM_BOT_TOKEN = '8982213234:AAH91SBn9kmb-2tdRz9vXKS96WguzuNpK_w';
-    const TELEGRAM_CHAT_ID = '8083212251';
+<!-- خدماتنا -->
+<section class="section" id="services">
+  <h2 class="section-title"><i class="fas fa-cogs"></i> خدماتنا الاحترافية</h2>
+  <p class="section-subtitle">نحن متخصصون في <strong class="gold">إعلانات ميتا (فيسبوك وإنستغرام)</strong> بأعلى معايير الاحترافية</p>
+  <div class="services-grid">
+    <div class="card"><i class="fab fa-meta" style="font-size: 48px;"></i><h3>إعلانات ميتا الاحترافية</h3><p>متخصصون فقط في إعلانات فيسبوك وإنستغرام للمحامين. استهداف دقيق جداً لنصل إلى عملائك المحتملين.</p></div>
+    <div class="card"><i class="fas fa-chart-line" style="font-size: 48px;"></i><h3>منظومة جلب القضايا</h3><p>نظام متكامل يجلب الاستشارات القانونية تلقائياً دون اعتماد على الإحالات فقط.</p></div>
+    <div class="card"><i class="fas fa-bullseye" style="font-size: 48px;"></i><h3>استهداف دقيق للقضايا</h3><p>نستهدف الأشخاص الذين يحتاجون خدماتك فعلاً ولديهم القدرة على الدفع.</p></div>
+    <div class="card"><i class="fas fa-gem" style="font-size: 48px;"></i><h3>هوية قانونية فاخرة</h3><p>تصاميم احترافية تعكس قوة مكتبك وتبني الثقة مع العملاء قبل أول اتصال.</p></div>
+    <div class="card"><i class="fas fa-brain" style="font-size: 48px;"></i><h3>نظام تأهيل العملاء</h3><p>أسئلة ذكية تصفي العملاء الجادين من الفضوليين.</p></div>
+    <div class="card"><i class="fas fa-paint-brush" style="font-size: 48px;"></i><h3>تصميم وإدارة الصفحات</h3><p>تصميم وإدارة يومية لصفحات فيسبوك وإنستغرام بما يليق بمكتبك.</p></div>
+  </div>
+</section>
 
-    function openConsultationModal() {
-      document.getElementById('consultationModal').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      document.getElementById('modalFormContainer').style.display = 'block';
-      document.getElementById('successMessage').style.display = 'none';
-      document.getElementById('modalForm').reset();
+<!-- قصص نجاح -->
+<section class="section section-dark" id="cases">
+  <h2 class="section-title"><i class="fas fa-chart-line"></i> قصص نجاح حقيقية</h2>
+  <p class="section-subtitle">هذه نتائج حقيقية لمكاتب محاماة عملت معنا</p>
+  <div class="case-studies">
+    <div class="case-card"><h3>مكتب الأسرة والإرث</h3><div class="case-stats"><div class="case-stat"><div class="number">+340%</div><div class="label">زيادة بالقضايا</div></div><div class="case-stat"><div class="number">70%</div><div class="label">نسبة التحويل</div></div></div><p>من 2 إلى 9 قضايا شهرياً خلال 4 أشهر.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "من أفضل القرارات التي اتخذتها لمكتبي."</div></div>
+    <div class="case-card"><h3>مكتب الشركات والعقود</h3><div class="case-stats"><div class="case-stat"><div class="number">+280%</div><div class="label">زيادة بالاستشارات</div></div><div class="case-stat"><div class="number">8x</div><div class="label">عائد الاستثمار</div></div></div><p>8 عقود جديدة في 3 أشهر.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "Lumora غيرت طريقة تفكيري في التسويق."</div></div>
+    <div class="case-card"><h3>مكتب الإصابات والحوادث</h3><div class="case-stats"><div class="case-stat"><div class="number">+420%</div><div class="label">زيادة بالقضايا</div></div><div class="case-stat"><div class="number">$2,500</div><div class="label">تكلفة القضية</div></div></div><p>47 قضية جديدة بقيمة تجاوزت المليون دولار.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "أفضل استثمار قمت به."</div></div>
+  </div>
+</section>
+
+<!-- كيف نعمل -->
+<section class="section">
+  <h2 class="section-title"><i class="fas fa-cogs"></i> كيف نصنع المنظومة؟</h2>
+  <div class="process-steps">
+    <div class="process-step"><div class="step-number">١</div><h3>تحليل وتخطيط</h3><p>ندرس مكتبك وجمهورك بدقة لنخرج بخطة نمو مخصصة.</p></div>
+    <div class="process-step"><div class="step-number">٢</div><h3>بناء البنية التحتية</h3><p>نصمم هويتك الرقمية وصفحاتك الاحترافية.</p></div>
+    <div class="process-step"><div class="step-number">٣</div><h3>تشغيل المنظومة</h3><p>نطلق الحملات ونبدأ بجلب العملاء المؤهلين.</p></div>
+    <div class="process-step"><div class="step-number">٤</div><h3>تحسين مستمر</h3><p>نحلل النتائج يومياً ونضاعف الناجح.</p></div>
+  </div>
+</section>
+
+<!-- أسئلة شائعة -->
+<section class="section section-dark">
+  <h2 class="section-title"><i class="fas fa-question-circle"></i> أسئلة شائعة</h2>
+  <div style="max-width: 800px; margin: auto;">
+    <div class="faq-item"><h3><i class="fab fa-meta"></i> لماذا تركزون على إعلانات ميتا؟</h3><p>لأن فيسبوك وإنستغرام يسمحان باستهداف دقيق جداً للمحامين لا يتوفر في أي منصة أخرى. نستطيع استهداف الأشخاص حسب المهنة، الاهتمامات القانونية، وحتى التفاعل مع صفحات منافسة.</p></div>
+    <div class="faq-item"><h3><i class="fas fa-coins"></i> كم تكلفة بناء المنظومة؟</h3><p>نقدم حلولاً مرنة. نناقش التفاصيل في الاستشارة المجانية ونقدم عرض سعر شفاف.</p></div>
+    <div class="faq-item"><h3><i class="fas fa-clock"></i> متى أرى النتائج؟</h3><p>خلال 30-45 يوماً من تشغيل المنظومة، يبدأ تدفق الاستشارات المؤهلة.</p></div>
+    <div class="faq-item"><h3><i class="fas fa-filter"></i> كيف تضمن جودة القضايا؟</h3><p>نظام تأهيل متعدد المراحل يصل إليك فقط العملاء الجادون ذوو الحاجة الحقيقية.</p></div>
+  </div>
+</section>
+
+<!-- قسم التواصل الاجتماعي -->
+<section class="section" id="contact">
+  <h2 class="section-title"><i class="fas fa-envelope"></i> تواصل معنا</h2>
+  <div class="social-final">
+    <p><i class="fas fa-share-alt" style="margin-left: 8px;"></i> تابع حساباتنا الرسمية</p>
+    <div class="social-icons">
+      <div class="social-icon-card">
+        <a href="https://www.instagram.com/lumora.growth.agency" target="_blank"><i class="fab fa-instagram"></i></a>
+        <span>الوكالة</span>
+      </div>
+      <div class="social-icon-card">
+        <a href="https://www.instagram.com/hatem_dayob" target="_blank"><i class="fas fa-user-tie"></i></a>
+        <span>المؤسس</span>
+      </div>
+    </div>
+    <div style="margin-top: 25px;">
+      <strong style="color:#d4af37; text-shadow:0 0 8px rgba(212,175,55,0.3);">حاتم ديوب</strong> - مؤسس Lumora
+    </div>
+  </div>
+</section>
+
+<!-- الفوتر -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-col"><h4>Lumora Agency</h4><p>متخصصون في إعلانات ميتا الاحترافية للمحامين. نبني منظومات متكاملة لجلب القضايا.</p></div>
+    <div class="footer-col"><h4>روابط سريعة</h4><a href="#home">الرئيسية</a><a href="#pain">المعاناة والحل</a><a href="#about">من نحن</a><a href="#services">خدماتنا</a><a href="#cases">قصص نجاح</a></div>
+    <div class="footer-col"><h4>تواصل</h4><a href="https://wa.me/963986148756"><i class="fab fa-whatsapp"></i> واتساب</a><a href="https://www.instagram.com/lumora.growth.agency" target="_blank"><i class="fab fa-instagram"></i> إنستغرام</a></div>
+  </div>
+  <div class="footer-bottom">© 2025 Lumora Growth Agency - جميع الحقوق محفوظة</div>
+</footer>
+
+<!-- نافذة الاستشارة -->
+<div class="modal-overlay" id="consultationModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeConsultationModal()"><i class="fas fa-times"></i></button>
+    <div id="modalFormContainer">
+      <div class="modal-icon"><i class="fas fa-scale-balanced"></i></div>
+      <h2 class="modal-title">احجز استشارتك المجانية</h2>
+      <p class="modal-subtitle">املأ البيانات وسيتواصل معك فريق Lumora خلال 24 ساعة لمناقشة بناء منظومة جلب القضايا لمكتبك</p>
+      <form class="modal-form" id="modalForm">
+        <input type="text" id="modalName" placeholder="الاسم الكامل *" required>
+        <input type="text" id="modalFirm" placeholder="اسم مكتب المحاماة *" required>
+        <select id="modalSpecialty" required>
+          <option value="">التخصص القانوني *</option>
+          <option>قضايا الأسرة</option><option>الهجرة والجنسية</option><option>الإصابات والحوادث</option>
+          <option>القضايا الجنائية</option><option>قانون الشركات</option><option>تجاري وعقود</option><option>قانون العمل</option><option>آخر</option>
+        </select>
+        <input type="text" id="modalCountry" placeholder="الدولة / المدينة *" required>
+        <div class="phone-group">
+          <select id="countryCode">
+            <option value="+966">🇸🇦 السعودية +966</option><option value="+20">🇪🇬 مصر +20</option><option value="+971">🇦🇪 الإمارات +971</option>
+            <option value="+974">🇶🇦 قطر +974</option><option value="+965">🇰🇼 الكويت +965</option><option value="+968">🇴🇲 عمان +968</option>
+            <option value="+973">🇧🇭 البحرين +973</option><option value="+962">🇯🇴 الأردن +962</option><option value="+961">🇱🇧 لبنان +961</option>
+            <option value="+963">🇸🇾 سوريا +963</option><option value="+970">🇵🇸 فلسطين +970</option><option value="+964">🇮🇶 العراق +964</option>
+            <option value="+967">🇾🇪 اليمن +967</option><option value="+216">🇹🇳 تونس +216</option><option value="+213">🇩🇿 الجزائر +213</option>
+            <option value="+212">🇲🇦 المغرب +212</option><option value="+218">🇱🇾 ليبيا +218</option><option value="+249">🇸🇩 السودان +249</option>
+            <option value="+252">🇸🇴 الصومال +252</option><option value="+90">🇹🇷 تركيا +90</option><option value="+44">🇬🇧 بريطانيا +44</option>
+            <option value="+1">🇺🇸 أمريكا +1</option>
+          </select>
+          <input type="tel" id="modalPhone" placeholder="رقم الهاتف *" required>
+        </div>
+        <input type="email" id="modalEmail" placeholder="البريد الإلكتروني *" required>
+        <button type="submit" class="btn-modal-submit" id="modalSubmitBtn"><i class="fas fa-paper-plane"></i> أرسل الطلب</button>
+      </form>
+    </div>
+    <div class="success-message" id="successMessage"><div class="success-icon"><i class="fas fa-check-circle"></i></div><h3>تم الإرسال بنجاح!</h3><p>شكراً لثقتك بـ Lumora. سنتواصل معك خلال 24 ساعة.</p></div>
+  </div>
+</div>
+
+<script>
+  // حاسبة العائد
+  const caseSlider = document.getElementById('caseValue');
+  const casesSlider = document.getElementById('monthlyCases');
+  const caseDisplay = document.getElementById('caseValueDisplay');
+  const casesDisplay = document.getElementById('monthlyCasesDisplay');
+  const roiSpan = document.getElementById('roiResult');
+  function updateROI() { 
+    let val = parseInt(caseSlider.value) * parseInt(casesSlider.value); 
+    caseDisplay.innerText = parseInt(caseSlider.value).toLocaleString(); 
+    casesDisplay.innerText = casesSlider.value; 
+    roiSpan.innerText = '$' + val.toLocaleString(); 
+  }
+  caseSlider.addEventListener('input', updateROI);
+  casesSlider.addEventListener('input', updateROI);
+  updateROI();
+
+  // القائمة الجانبية
+  function openSideMenu() { 
+    document.getElementById('sideMenu').classList.add('open'); 
+    document.getElementById('overlay').style.display = 'block'; 
+    document.body.style.overflow = 'hidden'; 
+  }
+  function closeSideMenu() { 
+    document.getElementById('sideMenu').classList.remove('open'); 
+    document.getElementById('overlay').style.display = 'none'; 
+    document.body.style.overflow = ''; 
+  }
+
+  // النوافذ
+  function openConsultationModal() { 
+    document.getElementById('consultationModal').style.display = 'flex'; 
+    document.body.style.overflow = 'hidden'; 
+    document.getElementById('modalFormContainer').style.display = 'block'; 
+    document.getElementById('successMessage').style.display = 'none'; 
+    document.getElementById('modalForm').reset(); 
+  }
+  function closeConsultationModal() { 
+    document.getElementById('consultationModal').style.display = 'none'; 
+    document.body.style.overflow = ''; 
+  }
+
+  // إغلاق المودال عند الضغط على الخلفية
+  document.getElementById('consultationModal').addEventListener('click', function(e) {
+    if (e.target === this) closeConsultationModal();
+  });
+
+  // إرسال تلغرام
+  const BOT_TOKEN = '8982213234:AAH91SBn9kmb-2tdRz9vXKS96WguzuNpK_w';
+  const CHAT_ID = '8083212251';
+  document.getElementById('modalForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('modalSubmitBtn');
+    const original = btn.innerHTML;
+    btn.disabled = true; 
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+    
+    const countryCode = document.getElementById('countryCode').value;
+    const phoneNumber = document.getElementById('modalPhone').value.trim();
+    const fullPhone = countryCode + phoneNumber;
+    const data = { 
+      name: document.getElementById('modalName').value, 
+      firm: document.getElementById('modalFirm').value, 
+      specialty: document.getElementById('modalSpecialty').value, 
+      country: document.getElementById('modalCountry').value, 
+      phone: fullPhone, 
+      email: document.getElementById('modalEmail').value 
+    };
+    
+    const msg = `🔥 *طلب استشارة جديد (Lumora)*\n\n━━━━━━━━━━━━━━━━━━\n👤 *الاسم:* ${data.name}\n🏛️ *المكتب:* ${data.firm}\n⚖️ *التخصص:* ${data.specialty}\n🌍 *الدولة:* ${data.country}\n📞 *الهاتف:* ${data.phone}\n📧 *الإيميل:* ${data.email}\n━━━━━━━━━━━━━━━━━━\n📅 ${new Date().toLocaleString('ar-SA')}\n🎯 _Lumora Growth Agency_`;
+    
+    try { 
+      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify({ chat_id: CHAT_ID, text: msg, parse_mode: 'Markdown' }) 
+      }); 
+      document.getElementById('modalFormContainer').style.display = 'none'; 
+      document.getElementById('successMessage').style.display = 'block'; 
+      setTimeout(closeConsultationModal, 4000); 
+    } catch(err) { 
+      alert('❌ حدث خطأ. يرجى التواصل عبر الواتساب.'); 
+      btn.disabled = false; 
+      btn.innerHTML = original; 
     }
+  });
 
-    function closeConsultationModal() {
-      document.getElementById('consultationModal').style.display = 'none';
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const modal = document.getElementById('consultationModal');
-      if (modal) modal.addEventListener('click', function(e) { if (e.target === modal) closeConsultationModal(); });
-    });
-
-    let isArabic = true;
-    function toggleLanguage() {
-      isArabic = !isArabic;
-      if(!isArabic) {
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
-        document.getElementById('mainTitle').innerHTML = 'We Transform Law Firms Into <span class="gold">Leading Legal Brands</span><br>Via Facebook & Instagram Ads';
-        document.getElementById('mainDesc').innerHTML = 'At <strong>Lumora Growth Agency</strong>, we don\'t believe in luck. Our sole focus is <span class="gold">Meta Ads (Facebook & Instagram)</span> for law firms. We use hyper-targeting to reach your potential clients at the right moment, with the right message. We don\'t sell you views or likes... we sell you <strong>qualified legal consultations and signed cases</strong>.';
-        document.getElementById('whyDifferentTitle').innerHTML = 'Why Is Lumora Different?';
-        document.getElementById('whyDifferentSubtitle').innerHTML = '100% focused on Meta Ads... We don\'t spread our efforts across other platforms';
-        document.getElementById('whyDifferentDesc').innerHTML = 'Most agencies spread themselves thin across Google, TikTok, LinkedIn, and Twitter. At <strong>Lumora</strong>, our focus is exclusively on <span class="gold">Facebook & Instagram</span> because we believe legal clients are there. We know exactly how to target them: by location, profession, legal interests, purchasing behavior, and even interaction with competitor pages.';
-        document.getElementById('smartMarketingTitle').innerHTML = '<i class="fab fa-meta"></i> Meta Ads for Lawyers';
-        document.getElementById('smartMarketingSubtitle').innerHTML = '100% focused on Facebook & Instagram to target legal clients';
-        document.getElementById('smartMarketingDesc').innerHTML = 'At <strong>Lumora</strong> we don\'t分散 our efforts. Our focus is exclusively on <span class="gold">Meta Platform (Facebook + Instagram)</span> because that\'s where your potential clients spend their time.<br><br><strong>Advanced targeting techniques we use:</strong><br><i class="fas fa-check-circle"></i> Targeting people who engaged with similar legal pages<br><i class="fas fa-check-circle"></i> Targeting employees in companies by sector<br><i class="fas fa-check-circle"></i> Targeting those interested in specific cases<br><i class="fas fa-check-circle"></i> Retargeting website visitors<br><i class="fas fa-check-circle"></i> Lookalike audiences based on your current clients';
-        document.getElementById('whyChooseTitle').innerHTML = 'Why Choose Lumora?';
-        document.getElementById('whyChooseSubtitle').innerHTML = 'Competitive advantages that set us apart';
-        document.getElementById('howWeWorkTitle').innerHTML = 'How We Work?';
-        document.getElementById('howWeWorkSubtitle').innerHTML = 'A clear methodology for guaranteed results';
-        document.getElementById('faqTitle').innerHTML = '<i class="fas fa-question-circle"></i> Frequently Asked Questions';
-        document.getElementById('contactTitle').innerHTML = '<i class="fas fa-envelope"></i> Contact Us';
-        document.getElementById('contactSubtitle').innerHTML = 'Follow the agency and founder on Instagram';
-        document.getElementById('modalTitle').innerHTML = 'Book Your Free Consultation';
-        document.getElementById('modalSubtitle').innerHTML = 'Fill in your details and the <strong>Lumora</strong> team will contact you within 24 hours to discuss your Meta ad campaign';
-        document.getElementById('modalSubmitBtn').innerHTML = '<i class="fas fa-paper-plane"></i> Submit Request';
-        document.querySelector('.lang-toggle').innerHTML = 'العربية';
-      } else {
-        location.reload();
-      }
-    }
-
-    document.getElementById('modalForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const submitBtn = document.getElementById('modalSubmitBtn');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
-
-      const countryCode = document.getElementById('countryCode').value;
-      const phoneNumber = document.getElementById('modalPhone').value.trim();
-      const fullPhone = countryCode + phoneNumber;
-
-      const data = {
-        name: document.getElementById('modalName').value.trim(),
-        firm: document.getElementById('modalFirm').value.trim(),
-        specialty: document.getElementById('modalSpecialty').value,
-        country: document.getElementById('modalCountry').value.trim(),
-        phone: fullPhone,
-        email: document.getElementById('modalEmail').value.trim(),
-        details: ''
-      };
-
-      const message = `🔥 *طلب استشارة قانونية جديد (إعلانات ميتا)*\n\n━━━━━━━━━━━━━━━━━━\n👤 *الاسم:* ${data.name}\n🏛️ *المكتب:* ${data.firm}\n⚖️ *التخصص:* ${data.specialty}\n🌍 *الدولة:* ${data.country}\n📞 *الهاتف:* ${data.phone}\n📧 *الإيميل:* ${data.email}\n━━━━━━━━━━━━━━━━━━\n📅 ${new Date().toLocaleString('ar-SA')}\n🎯 _Lumora Growth Agency - Meta Ads Specialists_`;
-
-      try {
-        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message, parse_mode: 'Markdown' })
-        });
-        const result = await response.json();
-        if (result.ok) {
-          document.getElementById('modalFormContainer').style.display = 'none';
-          document.getElementById('successMessage').style.display = 'block';
-          setTimeout(() => { closeConsultationModal(); }, 5000);
-        } else {
-          throw new Error(result.description);
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('❌ حدث خطأ. يرجى التواصل عبر الواتساب.');
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-      }
-    });
-  </script>
+  // ترجمة مبسطة
+  let isArabic = true;
+  function toggleLanguage() { 
+    if(isArabic) { 
+      document.documentElement.dir = 'ltr'; 
+      document.querySelectorAll('.lang-toggle').forEach(el => el.innerHTML = 'العربية');
+      isArabic = false; 
+      location.reload(); 
+    } else { 
+      location.reload(); 
+    } 
+  }
+</script>
 </body>
-  </html>
+      </html>
