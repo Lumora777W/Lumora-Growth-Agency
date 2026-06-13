@@ -20,7 +20,8 @@
     @keyframes floatGlow { 0%,100% { transform: translate(0,0) scale(1); opacity: 0.1; } 50% { transform: translate(20px,-20px) scale(1.1); opacity: 0.18; } }
     
     /* شريط التنقل */
-    .navbar { width: 100%; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; z-index: 1000; backdrop-filter: blur(25px); background: rgba(0,0,0,0.85); border-bottom: 1px solid rgba(212,175,55,0.3); }
+    .navbar { width: 100%; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; z-index: 1000; backdrop-filter: blur(25px); background: rgba(0,0,0,0.85); border-bottom: 1px solid rgba(212,175,55,0.3); transition: all 0.3s ease; }
+    .navbar.scrolled { padding: 12px 8%; background: rgba(0,0,0,0.95); }
     .brand { font-family: 'Cinzel', serif; font-size: 32px; color: #d4af37; letter-spacing: 4px; font-weight: bold; text-shadow: 0 0 25px rgba(212,175,55,0.5); }
     .brand span { display: block; font-size: 11px; letter-spacing: 8px; color: #d4af37; margin-top: -5px; opacity: 0.8; }
     .menu-icon { font-size: 28px; color: #d4af37; cursor: pointer; display: none; }
@@ -41,16 +42,37 @@
     /* البطل الرئيسي */
     .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 140px 8% 80px; text-align: center; }
     .hero-content { max-width: 950px; }
-    .premium-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px; border: 1px solid rgba(212,175,55,0.4); border-radius: 50px; color: #d4af37; margin-bottom: 30px; background: rgba(212,175,55,0.08); font-size: 14px; box-shadow: 0 0 15px rgba(212,175,55,0.2); }
-    h1 { font-size: 64px; line-height: 1.3; font-weight: 800; background: linear-gradient(to bottom, #fff, #ddd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; }
+    .premium-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px; border: 1px solid rgba(212,175,55,0.4); border-radius: 50px; color: #d4af37; margin-bottom: 30px; background: rgba(212,175,55,0.08); font-size: 14px; box-shadow: 0 0 15px rgba(212,175,55,0.2); animation: fadeInUp 0.8s ease; }
+    h1 { font-size: 64px; line-height: 1.3; font-weight: 800; background: linear-gradient(to bottom, #fff, #ddd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; animation: fadeInUp 0.8s ease 0.1s both; }
     .gold { color: #d4af37; -webkit-text-fill-color: #d4af37; text-shadow: 0 0 15px rgba(212,175,55,0.5); }
-    .hero p { color: #bdbdbd; font-size: 19px; margin-bottom: 40px; }
+    .hero p { color: #bdbdbd; font-size: 19px; margin-bottom: 40px; animation: fadeInUp 0.8s ease 0.2s both; }
+    .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; animation: fadeInUp 0.8s ease 0.3s both; }
+    
+    /* أنيماشن عامة */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    
+    .animate-fade-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+    .animate-fade-up.visible { opacity: 1; transform: translateY(0); }
+    .animate-fade-left { opacity: 0; transform: translateX(-40px); transition: all 0.7s ease; }
+    .animate-fade-left.visible { opacity: 1; transform: translateX(0); }
+    .animate-fade-right { opacity: 0; transform: translateX(40px); transition: all 0.7s ease; }
+    .animate-fade-right.visible { opacity: 1; transform: translateX(0); }
+    .animate-scale { opacity: 0; transform: scale(0.9); transition: all 0.6s ease; }
+    .animate-scale.visible { opacity: 1; transform: scale(1); }
+    
+    /* عناصر الكروت */
+    .card, .case-card, .process-step, .pain-item, .solution-item, .qualif-item, .targeting-card, .journey-step, .faq-item { transition: all 0.4s ease; }
+    .card:hover, .case-card:hover, .process-step:hover, .targeting-card:hover, .journey-step:hover { transform: translateY(-8px) scale(1.02); border-color: #d4af37; box-shadow: 0 25px 50px rgba(212,175,55,0.2); }
+    .pain-item:hover, .solution-item:hover { transform: translateX(-8px); }
+    
     .btn { padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; cursor: pointer; border: none; font-family: 'Cairo', sans-serif; }
     .btn-primary { background: linear-gradient(135deg, #d4af37, #f0cf62); color: #000; box-shadow: 0 10px 30px rgba(212,175,55,0.4); }
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 45px rgba(212,175,55,0.7); }
     .btn-secondary { border: 2px solid rgba(212,175,55,0.6); color: #d4af37; background: transparent; }
     .btn-secondary:hover { background: #d4af37; color: #000; box-shadow: 0 0 20px rgba(212,175,55,0.4); }
-    .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
     
     /* حاسبة العائد */
     .roi-calculator { max-width: 600px; margin: 50px auto 0; background: linear-gradient(180deg, #111, #0a0a0a); border: 1px solid rgba(212,175,55,0.3); border-radius: 30px; padding: 35px; text-align: center; box-shadow: 0 0 40px rgba(212,175,55,0.1); }
@@ -63,7 +85,6 @@
     .calc-result { background: rgba(212,175,55,0.12); border-radius: 20px; padding: 25px; margin-top: 25px; box-shadow: 0 0 20px rgba(212,175,55,0.1); }
     .calc-result .result-number { font-size: 48px; font-weight: 800; color: #d4af37; text-shadow: 0 0 20px rgba(212,175,55,0.7); letter-spacing: 2px; }
     
-    /* كبسة الخصم */
     .discount-cta { margin: 40px auto 0; text-align: center; }
     .discount-btn { background: linear-gradient(135deg, #d4af37, #f0cf62, #d4af37); background-size: 200% 200%; animation: gradientShift 3s ease infinite; color: #000; padding: 20px 50px; font-size: 24px; border-radius: 70px; box-shadow: 0 0 35px rgba(212,175,55,0.8); display: inline-flex; align-items: center; gap: 15px; border: none; cursor: pointer; font-weight: 800; transition: 0.3s; font-family: 'Cairo', sans-serif; }
     .discount-btn:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 0 55px rgba(212,175,55,1); }
@@ -79,14 +100,12 @@
     .pain-title { font-size: 36px; color: #d4af37; margin-bottom: 30px; text-align: center; text-shadow: 0 0 15px rgba(212,175,55,0.3); }
     .pain-list { background: rgba(17,17,17,0.7); border-radius: 24px; padding: 30px; border: 1px solid rgba(212,175,55,0.2); }
     .pain-item { display: flex; align-items: center; gap: 15px; padding: 18px 0; border-bottom: 1px solid rgba(212,175,55,0.1); transition: 0.3s; }
-    .pain-item:hover { transform: translateX(-8px); }
     .pain-icon { width: 50px; height: 50px; background: rgba(212,175,55,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #d4af37; }
     .pain-text { flex: 1; }
     .pain-text h4 { color: #d4af37; margin-bottom: 5px; font-size: 18px; }
     .pain-text p { color: #bbb; font-size: 14px; line-height: 1.6; }
     .solution-list { background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.02)); border-radius: 24px; padding: 30px; border: 1px solid rgba(212,175,55,0.3); box-shadow: 0 0 30px rgba(212,175,55,0.1); }
     .solution-item { display: flex; align-items: center; gap: 15px; padding: 18px 0; border-bottom: 1px solid rgba(212,175,55,0.1); transition: 0.3s; }
-    .solution-item:hover { transform: translateX(-8px); }
     .solution-icon { width: 50px; height: 50px; background: rgba(212,175,55,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #d4af37; box-shadow: 0 0 10px rgba(212,175,55,0.3); }
     .solution-text { flex: 1; }
     .solution-text h4 { color: #d4af37; margin-bottom: 5px; font-size: 18px; }
@@ -99,12 +118,13 @@
     .section-dark { background: rgba(10,10,10,0.5); }
     .section-title { font-size: 44px; text-align: center; color: #d4af37; margin-bottom: 15px; text-shadow: 0 0 25px rgba(212,175,55,0.3); }
     .section-subtitle { text-align: center; color: #aaa; margin-bottom: 50px; font-size: 17px; }
-    .cards, .case-studies, .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-    .card, .case-card { background: linear-gradient(180deg, #111, #0a0a0a); border: 1px solid rgba(212,175,55,0.2); border-radius: 20px; padding: 35px 25px; transition: 0.4s; text-align: center; }
-    .card:hover, .case-card:hover { transform: translateY(-8px); border-color: #d4af37; box-shadow: 0 25px 50px rgba(212,175,55,0.2); }
-    .card h3, .case-card h3 { color: #d4af37; margin-bottom: 12px; font-size: 20px; }
-    .card p, .case-card p { color: #bbb; font-size: 14px; line-height: 1.8; }
-    .card i, .case-card i { margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(212,175,55,0.5)); }
+    
+    .cards, .case-studies, .services-grid, .targeting-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+    .card, .case-card, .targeting-card { background: linear-gradient(180deg, #111, #0a0a0a); border: 1px solid rgba(212,175,55,0.2); border-radius: 20px; padding: 35px 25px; transition: 0.4s; text-align: center; }
+    .card i, .case-card i, .targeting-card i { margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(212,175,55,0.5)); font-size: 48px; }
+    .card h3, .case-card h3, .targeting-card h3 { color: #d4af37; margin-bottom: 12px; font-size: 20px; }
+    .card p, .case-card p, .targeting-card p { color: #bbb; font-size: 14px; line-height: 1.8; }
+    
     .case-stats { display: flex; justify-content: space-between; margin: 15px 0; }
     .case-stat { text-align: center; }
     .case-stat .number { font-size: 26px; font-weight: 800; color: #d4af37; text-shadow: 0 0 10px rgba(212,175,55,0.5); }
@@ -112,14 +132,24 @@
     
     .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 50px; }
     .process-step { text-align: center; padding: 30px 20px; background: rgba(17,17,17,0.6); border-radius: 20px; transition: 0.3s; }
-    .process-step:hover { transform: translateY(-5px); background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.3); }
     .step-number { width: 60px; height: 60px; background: linear-gradient(135deg, #d4af37, #f0cf62); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; margin: 0 auto 15px; box-shadow: 0 0 25px rgba(212,175,55,0.5); }
+    
+    .qualif-steps { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin-top: 40px; }
+    .qualif-item { flex: 1; min-width: 200px; text-align: center; padding: 25px; background: rgba(17,17,17,0.6); border-radius: 20px; border: 1px solid rgba(212,175,55,0.15); transition: 0.3s; }
+    .qualif-item:hover { transform: translateY(-5px); border-color: #d4af37; }
+    .qualif-icon { width: 65px; height: 65px; background: rgba(212,175,55,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
+    .qualif-icon i { font-size: 28px; color: #d4af37; }
+    
+    .journey-steps { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; margin-top: 50px; }
+    .journey-step { flex: 1; min-width: 140px; background: rgba(17,17,17,0.8); border-radius: 16px; padding: 20px 12px; text-align: center; transition: 0.3s; }
+    .journey-step:hover { transform: translateY(-5px); border-color: #d4af37; }
+    .journey-arrow { font-size: 30px; color: #d4af37; display: flex; align-items: center; }
+    @media (max-width: 768px) { .journey-steps { flex-direction: column; } .journey-arrow { transform: rotate(90deg); } }
     
     .faq-item { background: #0d0d0d; border: 1px solid rgba(212,175,55,0.15); border-radius: 15px; padding: 20px; margin-bottom: 12px; transition: 0.3s; }
     .faq-item:hover { border-color: rgba(212,175,55,0.5); background: #0f0f0f; box-shadow: 0 0 15px rgba(212,175,55,0.1); }
     .faq-item h3 { color: #d4af37; margin-bottom: 8px; font-size: 17px; display: flex; align-items: center; gap: 8px; }
     
-    /* رسالة المؤسس - أيقونة فقط */
     .founder-message { background: linear-gradient(135deg, #111, #0a0a0a); border: 1px solid rgba(212,175,55,0.3); border-radius: 24px; padding: 40px; margin-top: 40px; text-align: center; box-shadow: 0 0 30px rgba(212,175,55,0.1); }
     .founder-avatar { width: 110px; height: 110px; background: linear-gradient(135deg, #d4af37, #f0cf62); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 3px solid #d4af37; box-shadow: 0 0 25px rgba(212,175,55,0.5); animation: avatarGlow 2s infinite; }
     .founder-avatar i { font-size: 52px; color: #000; filter: drop-shadow(0 0 10px rgba(0,0,0,0.3)); }
@@ -128,8 +158,12 @@
     .founder-message p { color: #bbb; line-height: 1.9; margin: 15px 0; }
     .founder-signature { font-family: 'Cinzel', serif; color: #d4af37; margin-top: 15px; font-size: 18px; }
     
+    .audit-section { background: linear-gradient(135deg, #0a0a0a, #050505); border-radius: 30px; padding: 50px; text-align: center; margin-top: 50px; border: 1px solid rgba(212,175,55,0.2); transition: 0.3s; }
+    .audit-section:hover { transform: scale(1.01); border-color: rgba(212,175,55,0.4); }
+    .audit-btn { background: linear-gradient(135deg, #d4af37, #f0cf62); color: #000; padding: 18px 45px; font-size: 20px; border-radius: 60px; display: inline-flex; align-items: center; gap: 12px; border: none; cursor: pointer; font-weight: 800; margin-top: 25px; transition: 0.3s; }
+    .audit-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(212,175,55,0.5); }
+    
     .social-final { text-align: center; margin-top: 40px; }
-    .social-final p { color: #d4af37; margin-bottom: 20px; font-size: 18px; font-weight: 600; text-shadow: 0 0 8px rgba(212,175,55,0.3); }
     .social-icons { display: flex; gap: 35px; justify-content: center; flex-wrap: wrap; }
     .social-icon-card { text-align: center; transition: 0.3s; }
     .social-icon-card:hover { transform: translateY(-8px); }
@@ -139,24 +173,24 @@
     
     .footer { padding: 50px 8% 30px; background: #000; border-top: 1px solid rgba(212,175,55,0.2); }
     .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 35px; }
-    .footer-col h4 { color: #d4af37; margin-bottom: 15px; text-shadow: 0 0 8px rgba(212,175,55,0.2); }
+    .footer-col h4 { color: #d4af37; margin-bottom: 15px; }
     .footer-col p, .footer-col a { color: #777; font-size: 13px; text-decoration: none; display: block; margin-bottom: 8px; transition: 0.3s; }
-    .footer-col a:hover { color: #d4af37; transform: translateX(-5px); text-shadow: 0 0 5px rgba(212,175,55,0.3); }
+    .footer-col a:hover { color: #d4af37; transform: translateX(-5px); }
     .footer-bottom { text-align: center; color: #555; font-size: 12px; padding-top: 30px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); }
     
-    /* النوافذ المنبثقة */
+    /* المودال */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(12px); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; }
-    .modal-content { max-width: 520px; width: 100%; background: #0f0f0f; border: 1px solid rgba(212,175,55,0.4); border-radius: 28px; padding: 35px 30px; position: relative; box-shadow: 0 0 50px rgba(212,175,55,0.2); }
+    .modal-content { max-width: 520px; width: 100%; background: #0f0f0f; border: 1px solid rgba(212,175,55,0.4); border-radius: 28px; padding: 35px 30px; position: relative; animation: scaleIn 0.3s ease; }
     .modal-close { position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.05); border: none; color: #d4af37; font-size: 20px; cursor: pointer; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
     .modal-close:hover { background: rgba(212,175,55,0.2); transform: rotate(90deg); }
-    .modal-icon { text-align: center; font-size: 52px; margin-bottom: 15px; color: #d4af37; filter: drop-shadow(0 0 15px rgba(212,175,55,0.5)); }
+    .modal-icon { text-align: center; font-size: 52px; margin-bottom: 15px; color: #d4af37; }
     .modal-title { font-size: 26px; text-align: center; color: #d4af37; margin-bottom: 8px; font-weight: 800; }
     .modal-subtitle { text-align: center; color: #aaa; font-size: 14px; margin-bottom: 30px; }
-    .modal-form input, .modal-form select { width: 100%; padding: 14px 16px; background: #0a0a0a; border: 1px solid #222; border-radius: 14px; color: white; margin-bottom: 15px; font-size: 15px; transition: 0.3s; font-family: 'Cairo', sans-serif; }
+    .modal-form input, .modal-form select { width: 100%; padding: 14px 16px; background: #0a0a0a; border: 1px solid #222; border-radius: 14px; color: white; margin-bottom: 15px; font-size: 15px; font-family: 'Cairo', sans-serif; }
     .modal-form input:focus, .modal-form select:focus { border-color: #d4af37; outline: none; box-shadow: 0 0 20px rgba(212,175,55,0.3); }
     .phone-group { display: flex; gap: 12px; margin-bottom: 15px; }
-    .phone-group select { width: 140px; margin-bottom: 0; background: #0a0a0a; border: 1px solid #222; border-radius: 14px; color: white; padding: 14px 10px; font-family: 'Cairo', sans-serif; }
-    .btn-modal-submit { width: 100%; padding: 15px; background: linear-gradient(135deg, #d4af37, #f0cf62); color: #000; border: none; border-radius: 14px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Cairo', sans-serif; }
+    .phone-group select { width: 140px; margin-bottom: 0; background: #0a0a0a; border: 1px solid #222; border-radius: 14px; color: white; padding: 14px 10px; }
+    .btn-modal-submit { width: 100%; padding: 15px; background: linear-gradient(135deg, #d4af37, #f0cf62); color: #000; border: none; border-radius: 14px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
     .btn-modal-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(212,175,55,0.5); }
     .success-message { display: none; text-align: center; padding: 20px; }
     .success-message .success-icon { font-size: 60px; color: #4CAF50; margin-bottom: 15px; }
@@ -168,8 +202,7 @@
 
 <div class="bg-glow glow-1"></div><div class="bg-glow glow-2"></div><div class="bg-glow glow-3"></div><div class="bg-glow glow-4"></div>
 
-<!-- شريط التنقل -->
-<nav class="navbar">
+<nav class="navbar" id="navbar">
   <div class="brand">LUMORA<span>GROWTH AGENCY</span></div>
   <div class="menu-icon" onclick="openSideMenu()"><i class="fas fa-bars"></i></div>
   <div class="nav-links">
@@ -183,7 +216,6 @@
   </div>
 </nav>
 
-<!-- القائمة الجانبية -->
 <div class="side-menu" id="sideMenu">
   <div class="close-menu" onclick="closeSideMenu()"><i class="fas fa-times"></i></div>
   <a href="#home" onclick="closeSideMenu()"><i class="fas fa-home"></i> الرئيسية</a>
@@ -196,49 +228,32 @@
 </div>
 <div class="overlay" id="overlay" onclick="closeSideMenu()"></div>
 
-<!-- القسم الرئيسي -->
+<!-- ========== القسم الرئيسي ========== -->
 <section class="hero" id="home">
   <div class="hero-content">
     <div class="premium-badge"><i class="fas fa-crown"></i> نظام متكامل لجلب القضايا للمحامين</div>
     <h1>نبني لك <span class="gold">منظومة متكاملة</span> تجلب القضايا والاستشارات القانونية المؤهلة</h1>
-    <p>في <strong>Lumora</strong>، لا نكتفي بالإعلانات. نبني لك نظاماً متكاملاً مهمته الوحيدة: جلب القضايا الحقيقية والعملاء المؤهلين لمكتبك.</p>
+    <p>في <strong>Lumora</strong>، لا نكتفي بالإعلانات. نبني لك نظاماً متكاملاً مهمته الوحيدة: جلب القضايا الحقيقية والعملاء المؤهلين لمكتبك. من أول نقطة اتصال إلى توقيع العقد، كل شيء مصمم ليزداد عدد عملائك وجودتهم.</p>
     <div class="cta-group">
       <button onclick="openConsultationModal()" class="btn btn-primary"><i class="fas fa-calendar-check"></i> احجز استشارتك المجانية</button>
       <a href="https://wa.me/963986148756?text=مرحباً،%20أرغب%20باستشارة%20حول%20جلب%20القضايا%20لمكتبي" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> واتساب فوري</a>
     </div>
 
-    <!-- حاسبة العائد -->
-    <div class="roi-calculator">
+    <div class="roi-calculator animate-scale">
       <h3><i class="fas fa-chart-line"></i> كم تربح من كل قضية؟</h3>
-      <div class="calc-slider">
-        <label><i class="fas fa-gavel"></i> متوسط قيمة القضية</label>
-        <input type="range" id="caseValue" min="1000" max="50000" step="1000" value="15000">
-        <div class="calc-value"><span>$</span><span id="caseValueDisplay">15,000</span></div>
-      </div>
-      <div class="calc-slider">
-        <label><i class="fas fa-chart-simple"></i> عدد القضايا المستهدف شهرياً</label>
-        <input type="range" id="monthlyCases" min="1" max="20" step="1" value="5">
-        <div class="calc-value"><span>قضية/شهر</span><span id="monthlyCasesDisplay">5</span></div>
-      </div>
-      <div class="calc-result">
-        <div class="result-number" id="roiResult">$75,000</div>
-        <p>الإيرادات الشهرية المتوقعة</p>
-        <small style="color:#aaa;">*يتحقق خلال 3-6 أشهر من تشغيل المنظومة</small>
-      </div>
+      <div class="calc-slider"><label><i class="fas fa-gavel"></i> متوسط قيمة القضية</label><input type="range" id="caseValue" min="1000" max="50000" step="1000" value="15000"><div class="calc-value"><span>$</span><span id="caseValueDisplay">15,000</span></div></div>
+      <div class="calc-slider"><label><i class="fas fa-chart-simple"></i> عدد القضايا المستهدف شهرياً</label><input type="range" id="monthlyCases" min="1" max="20" step="1" value="5"><div class="calc-value"><span>قضية/شهر</span><span id="monthlyCasesDisplay">5</span></div></div>
+      <div class="calc-result"><div class="result-number" id="roiResult">$75,000</div><p>الإيرادات الشهرية المتوقعة</p><small style="color:#aaa;">*يتحقق خلال 3-6 أشهر من تشغيل المنظومة</small></div>
     </div>
 
-    <!-- كبسة الخصم -->
-    <div class="discount-cta">
-      <button onclick="openConsultationModal()" class="discount-btn"><i class="fas fa-gift"></i> اطلب الخصم 30% الآن <i class="fas fa-arrow-left"></i></button>
-      <p class="small-note">*لأول 5 عملاء فقط. العرض محدود.</p>
-    </div>
+    <div class="discount-cta"><button onclick="openConsultationModal()" class="discount-btn"><i class="fas fa-gift"></i> اطلب الخصم 30% الآن <i class="fas fa-arrow-left"></i></button><p class="small-note">*لأول 5 عملاء فقط. العرض محدود.</p></div>
   </div>
 </section>
 
-<!-- قسم الألم والحل -->
+<!-- ========== 1) الألم والحل ========== -->
 <section class="pain-section" id="pain">
   <div class="pain-container">
-    <div class="pain-col">
+    <div class="pain-col animate-fade-left">
       <h2 class="pain-title"><i class="fas fa-heart-broken"></i> قبل Lumora... كان المحامون يعانون</h2>
       <div class="pain-list">
         <div class="pain-item"><div class="pain-icon"><i class="fas fa-funnel-dollar"></i></div><div class="pain-text"><h4>ميزانية إعلانية تُهدر</h4><p>ينفق آلاف الدولارات على إعلانات لا تجلب سوى مشاهدات، لا عملاء.</p></div></div>
@@ -248,10 +263,8 @@
         <div class="pain-item"><div class="pain-icon"><i class="fas fa-tachometer-alt"></i></div><div class="pain-text"><h4>ضغط نفسي مستمر</h4><p>القلق الدائم من أين سيأتي العميل القادم يسرق متعة المهنة.</p></div></div>
       </div>
     </div>
-    
     <div class="pain-arrow"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-left"></i></div>
-    
-    <div class="pain-col">
+    <div class="pain-col animate-fade-right">
       <h2 class="pain-title"><i class="fas fa-lightbulb"></i> مع Lumora... الحل جذري ومتكامل</h2>
       <div class="solution-list">
         <div class="solution-item"><div class="solution-icon"><i class="fas fa-chart-line"></i></div><div class="solution-text"><h4>منظومة جلب قضايا آلية</h4><p>نظام متكامل يجلب لك العملاء المؤهلين تلقائياً، 24 ساعة يومياً.</p></div></div>
@@ -264,13 +277,144 @@
   </div>
 </section>
 
-<!-- من نحن + أيقونة المؤسس -->
-<section class="section section-dark" id="about">
-  <h2 class="section-title"><i class="fas fa-users"></i> من نحن</h2>
-  <div class="founder-message">
-    <div class="founder-avatar">
-      <i class="fas fa-user-tie"></i>
+<!-- ========== 2) نظام التأهيل الذكي ========== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title animate-fade-up"><i class="fas fa-filter"></i> نظام التأهيل الذكي للقضايا</h2>
+    <p class="section-subtitle animate-fade-up">نقبل فقط القضايا عالية القيمة - نوفر عليك 80% من وقت المكالمات الوهمية</p>
+    <div class="qualif-steps">
+      <div class="qualif-item animate-fade-up" style="transition-delay: 0.1s;"><div class="qualif-icon"><i class="fas fa-question-circle"></i></div><h3>أسئلة ذكية</h3><p>نسأل أسئلة محددة عن نوع الحادث، الأضرار، والمستشفى لتصفية القضايا الضعيفة فوراً.</p></div>
+      <div class="qualif-item animate-fade-up" style="transition-delay: 0.2s;"><div class="qualif-icon"><i class="fas fa-chart-line"></i></div><h3>تحليل تلقائي</h3><p>نظامنا يقيم قيمة القضية المحتملة (متوسط التعويض، نسبة الخطأ، وضوح المسؤولية).</p></div>
+      <div class="qualif-item animate-fade-up" style="transition-delay: 0.3s;"><div class="qualif-icon"><i class="fas fa-tags"></i></div><h3>تصنيف الأولوية</h3><p>نصنف العملاء حسب الجاهزية: ساخن، دافئ، بارد. أنت تتصل فقط بـ "الساخن".</p></div>
+      <div class="qualif-item animate-fade-up" style="transition-delay: 0.4s;"><div class="qualif-icon"><i class="fas fa-check-double"></i></div><h3>تأكيد الجودة</h3><p>نتأكد أن العميل لديه القدرة المالية والرغبة الحقيقية في التعاقد قبل وصوله لك.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ========== 3) تحويل التخصص إلى أرباح ========== -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="section-title animate-fade-up"><i class="fas fa-chart-pie"></i> تحويل التخصص إلى أرباح</h2>
+    <p class="section-subtitle animate-fade-up">نحلل تخصصك ونوجه الحملات لأعلى أنواع القضايا ربحية</p>
+    <div class="cards">
+      <div class="card animate-fade-up" style="transition-delay: 0.1s;"><i class="fas fa-chart-line"></i><h3>تحليل التخصص</h3><p>ندرس خبرتك ونقاط قوتك لنحدد القضايا التي تحقق لك أعلى عائد.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.2s;"><i class="fas fa-chart-simple"></i><h3>ربط بالربحية</h3><p>نربط كل تخصص بنوع القضية الأعلى قيمة (مثلاً: إصابات السيارات ← حوادث الشاحنات).</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.3s;"><i class="fas fa-bullhorn"></i><h3>توجيه الحملات</h3><p>نوجه الإعلانات لاستهداف الجمهور الأكثر ربحية، وليس فقط أي عميل محتمل.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4) كيف تعمل منظومة Lumora ========== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title animate-fade-up"><i class="fas fa-cogs"></i> كيف تعمل منظومة Lumora</h2>
+    <p class="section-subtitle animate-fade-up">منظومة متكاملة، وليست مجرد إعلانات</p>
+    <div class="journey-steps">
+      <div class="journey-step animate-scale" style="transition-delay: 0.1s;"><i class="fas fa-ad" style="font-size: 32px;"></i><h3>إعلان ذكي</h3><p>نستهدف الجمهور المناسب</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.2s;"><i class="fas fa-file-alt" style="font-size: 32px;"></i><h3>نموذج تأهيل</h3><p>أسئلة تصفية ذكية</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.3s;"><i class="fas fa-filter" style="font-size: 32px;"></i><h3>فلترة تلقائية</h3><p>نقبل فقط القضايا القوية</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.4s;"><i class="fas fa-phone-alt" style="font-size: 32px;"></i><h3>مكالمة مؤهلة</h3><p>تتصل أنت فقط بالقضايا الساخنة</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.5s;"><i class="fas fa-gavel" style="font-size: 32px;"></i><h3>قضية موقعة</h3><p>تحويل إلى عقد ورسوم قانونية</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5) لماذا تفشل أغلب المكاتب ========== -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="section-title animate-fade-up"><i class="fas fa-exclamation-triangle"></i> لماذا تفشل أغلب مكاتب المحاماة في التسويق؟</h2>
+    <div class="cards">
+      <div class="card animate-fade-up" style="transition-delay: 0.1s;"><i class="fas fa-handshake"></i><h3>الاعتماد على الإحالات فقط</h3><p>الإحالات رائعة لكنها غير كافية للنمو. تحتاج نظاماً يجلب عملاء جدد باستمرار.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.2s;"><i class="fas fa-ad"></i><h3>إعلانات غير مؤهلة</h3><p>معظم الإعلانات تجلب زواراً ليسوا عملاء حقيقيين، فتضيع الميزانية دون نتيجة.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.3s;"><i class="fas fa-filter"></i><h3>عدم وجود فلترة للعملاء</h3><p>تتصل بك أعداد كبيرة من الأشخاص غير الجادين، فتضيع وقت ثمين على مكالمات وهمية.</p></div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;" class="animate-fade-up"><p class="gold" style="font-size: 18px;"><i class="fas fa-lightbulb"></i> الحل من Lumora: منظومة متكاملة تجلب فقط العملاء المؤهلين والجادين.</p></div>
+  </div>
+</section>
+
+<!-- ========== 6) أنواع القضايا عالية القيمة ========== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title animate-fade-up"><i class="fas fa-gavel"></i> أنواع القضايا عالية القيمة التي نستهدفها</h2>
+    <p class="section-subtitle animate-fade-up">نركز على القضايا التي تحقق أعلى عائد لمكتبك</p>
+    <div class="services-grid">
+      <div class="card animate-fade-up" style="transition-delay: 0.1s;"><i class="fas fa-car-crash"></i><h3>حوادث السيارات</h3><p>حوادث الشاحنات، السيارات، والدراجات النارية ذات التعويضات العالية.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.2s;"><i class="fas fa-briefcase"></i><h3>قضايا الشركات والعقود</h3><p>نزاعات تجارية، عقود كبيرة، وقضايا شركات بملايين الدولارات.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.3s;"><i class="fas fa-chart-line"></i><h3>النزاعات المالية الكبيرة</h3><p>قضايا مصرفية، استثمارية، وميراث بقيمة عالية.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.4s;"><i class="fas fa-landmark"></i><h3>قضايا التعويضات</h3><p>أخطاء طبية، إصابات خطيرة، ووفيات غير طبيعية.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.5s;"><i class="fas fa-hand-holding-heart"></i><h3>الإرث والقضايا المعقدة</h3><p>قضايا عقارية، ميراث، ووصايا معقدة.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.6s;"><i class="fas fa-building"></i><h3>النزاعات العقارية</h3><p>عقود عقارية، نزاعات إيجار، وقضايا مالك/مستأجر كبيرة.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7) نماذج الاستهداف ========== -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="section-title animate-fade-up"><i class="fas fa-crosshairs"></i> نماذج الاستهداف</h2>
+    <p class="section-subtitle animate-fade-up">اختر النموذج المناسب لمكتبك</p>
+    <div class="targeting-grid">
+      <div class="targeting-card animate-fade-up" style="transition-delay: 0.1s;"><i class="fas fa-crown"></i><h3>High Value Model</h3><p>نستهدف قضايا بقيمة تتجاوز 50,000$. عدد أقل، قيمة أعلى، وقت أقل للتحويل.</p></div>
+      <div class="targeting-card animate-fade-up" style="transition-delay: 0.2s;"><i class="fas fa-chart-line"></i><h3>Volume Model</h3><p>نستهدف عدداً كبيراً من القضايا متوسطة القيمة (10,000$-50,000$). مثالي للمكاتب الكبيرة.</p></div>
+      <div class="targeting-card animate-fade-up" style="transition-delay: 0.3s;"><i class="fas fa-building"></i><h3>Corporate Model</h3><p>نستهدف شركات ومؤسسات في قضايا تجارية وعقود مستمرة. عقود طويلة الأجل.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8) ضمان الجودة وسياسة القبول ========== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title animate-fade-up"><i class="fas fa-shield-alt"></i> ضمان الجودة وسياسة القبول</h2>
+    <div style="text-align: center; max-width: 800px; margin: auto;">
+      <div class="card animate-fade-up" style="margin-bottom: 20px; transition-delay: 0.1s;"><i class="fas fa-check-circle"></i><h3>لا نعمل مع أي مكتب بدون جاهزية</h3><p>نقبل فقط المكاتب الجاهزة للنمو السريع. نتأكد أن لديك القدرة على استقبال القضايا الجديدة وتحويلها.</p></div>
+      <div class="card animate-fade-up" style="margin-bottom: 20px; transition-delay: 0.2s;"><i class="fas fa-chart-line"></i><h3>فقط مكاتب مؤهلة للنمو</h3><p>نعمل مع مكاتب لديها سمعة جيدة، فريق قانوني كاف، واستعداد للتوسع.</p></div>
+      <div class="card animate-fade-up" style="transition-delay: 0.3s;"><i class="fas fa-gem"></i><h3>التركيز على جودة القضايا وليس العدد</h3><p>نفضل 5 قضايا بقيمة مليون دولار على 50 قضية بقيمة 100 ألف. نختار الجودة.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 9) رحلة العميل داخل النظام ========== -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="section-title animate-fade-up"><i class="fas fa-route"></i> رحلة العميل داخل النظام</h2>
+    <div class="journey-steps">
+      <div class="journey-step animate-scale" style="transition-delay: 0.1s;"><i class="fas fa-ad" style="font-size: 28px;"></i><h3>إعلان</h3><p>يصل العميل لإعلاننا</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.2s;"><i class="fas fa-edit" style="font-size: 28px;"></i><h3>نموذج</h3><p>يملأ بيانات قضيته</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.3s;"><i class="fas fa-filter" style="font-size: 28px;"></i><h3>فلترة</h3><p>نقيّم القضية</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.4s;"><i class="fas fa-phone" style="font-size: 28px;"></i><h3>مكالمة</h3><p>تتواصل أنت معه</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.5s;"><i class="fas fa-handshake" style="font-size: 28px;"></i><h3>تحويل</h3><p>يوقع العقد</p></div>
+      <i class="fas fa-arrow-left journey-arrow"></i>
+      <div class="journey-step animate-scale" style="transition-delay: 0.6s;"><i class="fas fa-gavel" style="font-size: 28px;"></i><h3>قضية</h3><p>تبدأ العمل القانوني</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 10) استشارة تشخيص مجانية ========== -->
+<section class="section">
+  <div class="container">
+    <div class="audit-section animate-scale">
+      <i class="fas fa-stethoscope" style="font-size: 60px; color: #d4af37; margin-bottom: 20px; display: inline-block;"></i>
+      <h2 class="section-title" style="margin-bottom: 20px;">استشارة تشخيص مجانية لمكتبك</h2>
+      <p style="max-width: 700px; margin: 0 auto; color: #bbb;">نحلل وضع مكتبك الحالي، نقاط قوتك وضعفك، ونقدم لك خطة نمو أولية مخصصة. بدون أي التزام.</p>
+      <button onclick="openConsultationModal()" class="audit-btn"><i class="fas fa-calendar-check"></i> احصل على تشخيص مجاني لمكتبك</button>
+      <p style="margin-top: 20px; font-size: 13px; color: #666;">الاستشارة تستغرق 30 دقيقة. نحدد معاً فرص زيادة قضاياك بنسبة 200-500%.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== من نحن + رسالة المؤسس ========== -->
+<section class="section section-dark" id="about">
+  <h2 class="section-title animate-fade-up"><i class="fas fa-users"></i> من نحن</h2>
+  <div class="founder-message animate-scale">
+    <div class="founder-avatar"><i class="fas fa-user-tie"></i></div>
     <h3>رسالة حاتم ديوب - المؤسس</h3>
     <p>"أنا حاتم، مؤسس Lumora. قبل أن أؤسس هذه الوكالة، كنت في مكانك تماماً. أعرف كم هو مرهق أن يكون لديك مكتب محاماة ممتاز لكن العملاء لا يأتون بالشكل الكافي. أعرف كم هو مؤلم أن ترى جهودك التسويقية تذهب هباءً لأن من يديرها لا يفهم خصوصية المهنة القانونية.</p>
     <p>لهذا السبب أسست Lumora. لن نبيعك إعلانات، بل سنبني لك <strong>منظومة متكاملة</strong> تجلب لك القضايا وأنت مرتاح. نحن لا ننام حتى ترى النتائج. ثقتي كبيرة بأنك بعد 6 أشهر من العمل معنا، ستنسى أنك كنت تعاني من جلب العملاء أصلاً.</p>
@@ -279,75 +423,67 @@
   </div>
 </section>
 
-<!-- خدماتنا -->
+<!-- ========== خدماتنا ========== -->
 <section class="section" id="services">
-  <h2 class="section-title"><i class="fas fa-cogs"></i> خدماتنا الاحترافية</h2>
-  <p class="section-subtitle">نحن متخصصون في <strong class="gold">إعلانات ميتا (فيسبوك وإنستغرام)</strong> بأعلى معايير الاحترافية</p>
+  <h2 class="section-title animate-fade-up"><i class="fas fa-cogs"></i> خدماتنا الاحترافية</h2>
+  <p class="section-subtitle animate-fade-up">نحن متخصصون في <strong class="gold">إعلانات ميتا (فيسبوك وإنستغرام)</strong> بأعلى معايير الاحترافية</p>
   <div class="services-grid">
-    <div class="card"><i class="fab fa-meta" style="font-size: 48px;"></i><h3>إعلانات ميتا الاحترافية</h3><p>متخصصون فقط في إعلانات فيسبوك وإنستغرام للمحامين. استهداف دقيق جداً لنصل إلى عملائك المحتملين.</p></div>
-    <div class="card"><i class="fas fa-chart-line" style="font-size: 48px;"></i><h3>منظومة جلب القضايا</h3><p>نظام متكامل يجلب الاستشارات القانونية تلقائياً دون اعتماد على الإحالات فقط.</p></div>
-    <div class="card"><i class="fas fa-bullseye" style="font-size: 48px;"></i><h3>استهداف دقيق للقضايا</h3><p>نستهدف الأشخاص الذين يحتاجون خدماتك فعلاً ولديهم القدرة على الدفع.</p></div>
-    <div class="card"><i class="fas fa-gem" style="font-size: 48px;"></i><h3>هوية قانونية فاخرة</h3><p>تصاميم احترافية تعكس قوة مكتبك وتبني الثقة مع العملاء قبل أول اتصال.</p></div>
-    <div class="card"><i class="fas fa-brain" style="font-size: 48px;"></i><h3>نظام تأهيل العملاء</h3><p>أسئلة ذكية تصفي العملاء الجادين من الفضوليين.</p></div>
-    <div class="card"><i class="fas fa-paint-brush" style="font-size: 48px;"></i><h3>تصميم وإدارة الصفحات</h3><p>تصميم وإدارة يومية لصفحات فيسبوك وإنستغرام بما يليق بمكتبك.</p></div>
+    <div class="card animate-fade-up" style="transition-delay: 0.1s;"><i class="fab fa-meta"></i><h3>إعلانات ميتا الاحترافية</h3><p>متخصصون فقط في إعلانات فيسبوك وإنستغرام للمحامين. استهداف دقيق جداً لنصل إلى عملائك المحتملين.</p></div>
+    <div class="card animate-fade-up" style="transition-delay: 0.2s;"><i class="fas fa-chart-line"></i><h3>منظومة جلب القضايا</h3><p>نظام متكامل يجلب الاستشارات القانونية تلقائياً دون اعتماد على الإحالات فقط.</p></div>
+    <div class="card animate-fade-up" style="transition-delay: 0.3s;"><i class="fas fa-bullseye"></i><h3>استهداف دقيق للقضايا</h3><p>نستهدف الأشخاص الذين يحتاجون خدماتك فعلاً ولديهم القدرة على الدفع.</p></div>
+    <div class="card animate-fade-up" style="transition-delay: 0.4s;"><i class="fas fa-gem"></i><h3>هوية قانونية فاخرة</h3><p>تصاميم احترافية تعكس قوة مكتبك وتبني الثقة مع العملاء قبل أول اتصال.</p></div>
+    <div class="card animate-fade-up" style="transition-delay: 0.5s;"><i class="fas fa-brain"></i><h3>نظام تأهيل العملاء</h3><p>أسئلة ذكية تصفي العملاء الجادين من الفضوليين.</p></div>
+    <div class="card animate-fade-up" style="transition-delay: 0.6s;"><i class="fas fa-paint-brush"></i><h3>تصميم وإدارة الصفحات</h3><p>تصميم وإدارة يومية لصفحات فيسبوك وإنستغرام بما يليق بمكتبك.</p></div>
   </div>
 </section>
 
-<!-- قصص نجاح -->
+<!-- ========== قصص نجاح ========== -->
 <section class="section section-dark" id="cases">
-  <h2 class="section-title"><i class="fas fa-chart-line"></i> قصص نجاح حقيقية</h2>
-  <p class="section-subtitle">هذه نتائج حقيقية لمكاتب محاماة عملت معنا</p>
+  <h2 class="section-title animate-fade-up"><i class="fas fa-chart-line"></i> قصص نجاح حقيقية</h2>
+  <p class="section-subtitle animate-fade-up">هذه نتائج حقيقية لمكاتب محاماة عملت معنا</p>
   <div class="case-studies">
-    <div class="case-card"><h3>مكتب الأسرة والإرث</h3><div class="case-stats"><div class="case-stat"><div class="number">+340%</div><div class="label">زيادة بالقضايا</div></div><div class="case-stat"><div class="number">70%</div><div class="label">نسبة التحويل</div></div></div><p>من 2 إلى 9 قضايا شهرياً خلال 4 أشهر.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "من أفضل القرارات التي اتخذتها لمكتبي."</div></div>
-    <div class="case-card"><h3>مكتب الشركات والعقود</h3><div class="case-stats"><div class="case-stat"><div class="number">+280%</div><div class="label">زيادة بالاستشارات</div></div><div class="case-stat"><div class="number">8x</div><div class="label">عائد الاستثمار</div></div></div><p>8 عقود جديدة في 3 أشهر.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "Lumora غيرت طريقة تفكيري في التسويق."</div></div>
-    <div class="case-card"><h3>مكتب الإصابات والحوادث</h3><div class="case-stats"><div class="case-stat"><div class="number">+420%</div><div class="label">زيادة بالقضايا</div></div><div class="case-stat"><div class="number">$2,500</div><div class="label">تكلفة القضية</div></div></div><p>47 قضية جديدة بقيمة تجاوزت المليون دولار.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "أفضل استثمار قمت به."</div></div>
+    <div class="case-card animate-fade-up" style="transition-delay: 0.1s;"><h3>مكتب الأسرة والإرث</h3><div class="case-stats"><div class="case-stat"><div class="number">+340%</div><div class="label">زيادة بالقضايا</div></div><div class="case-stat"><div class="number">70%</div><div class="label">نسبة التحويل</div></div></div><p>من 2 إلى 9 قضايا شهرياً خلال 4 أشهر.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "من أفضل القرارات التي اتخذتها لمكتبي."</div></div>
+    <div class="case-card animate-fade-up" style="transition-delay: 0.2s;"><h3>مكتب الشركات والعقود</h3><div class="case-stats"><div class="case-stat"><div class="number">+280%</div><div class="label">زيادة بالاستشارات</div></div><div class="case-stat"><div class="number">8x</div><div class="label">عائد الاستثمار</div></div></div><p>8 عقود جديدة في 3 أشهر.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "Lumora غيرت طريقة تفكيري في التسويق."</div></div>
+    <div class="case-card animate-fade-up" style="transition-delay: 0.3s;"><h3>مكتب الإصابات والحوادث</h3><div class="case-stats"><div class="case-stat"><div class="number">+420%</div><div class="label">زيادة بالقضايا</div></div><div class="case-stat"><div class="number">$2,500</div><div class="label">تكلفة القضية</div></div></div><p>47 قضية جديدة بقيمة تجاوزت المليون دولار.</p><div class="case-quote"><i class="fas fa-quote-right"></i> "أفضل استثمار قمت به."</div></div>
   </div>
 </section>
 
-<!-- كيف نعمل -->
+<!-- ========== كيف نعمل ========== -->
 <section class="section">
-  <h2 class="section-title"><i class="fas fa-cogs"></i> كيف نصنع المنظومة؟</h2>
+  <h2 class="section-title animate-fade-up"><i class="fas fa-cogs"></i> كيف نصنع المنظومة؟</h2>
   <div class="process-steps">
-    <div class="process-step"><div class="step-number">١</div><h3>تحليل وتخطيط</h3><p>ندرس مكتبك وجمهورك بدقة لنخرج بخطة نمو مخصصة.</p></div>
-    <div class="process-step"><div class="step-number">٢</div><h3>بناء البنية التحتية</h3><p>نصمم هويتك الرقمية وصفحاتك الاحترافية.</p></div>
-    <div class="process-step"><div class="step-number">٣</div><h3>تشغيل المنظومة</h3><p>نطلق الحملات ونبدأ بجلب العملاء المؤهلين.</p></div>
-    <div class="process-step"><div class="step-number">٤</div><h3>تحسين مستمر</h3><p>نحلل النتائج يومياً ونضاعف الناجح.</p></div>
+    <div class="process-step animate-fade-up" style="transition-delay: 0.1s;"><div class="step-number">١</div><h3>تحليل وتخطيط</h3><p>ندرس مكتبك وجمهورك بدقة لنخرج بخطة نمو مخصصة.</p></div>
+    <div class="process-step animate-fade-up" style="transition-delay: 0.2s;"><div class="step-number">٢</div><h3>بناء البنية التحتية</h3><p>نصمم هويتك الرقمية وصفحاتك الاحترافية.</p></div>
+    <div class="process-step animate-fade-up" style="transition-delay: 0.3s;"><div class="step-number">٣</div><h3>تشغيل المنظومة</h3><p>نطلق الحملات ونبدأ بجلب العملاء المؤهلين.</p></div>
+    <div class="process-step animate-fade-up" style="transition-delay: 0.4s;"><div class="step-number">٤</div><h3>تحسين مستمر</h3><p>نحلل النتائج يومياً ونضاعف الناجح.</p></div>
   </div>
 </section>
 
-<!-- أسئلة شائعة -->
+<!-- ========== أسئلة شائعة ========== -->
 <section class="section section-dark">
-  <h2 class="section-title"><i class="fas fa-question-circle"></i> أسئلة شائعة</h2>
+  <h2 class="section-title animate-fade-up"><i class="fas fa-question-circle"></i> أسئلة شائعة</h2>
   <div style="max-width: 800px; margin: auto;">
-    <div class="faq-item"><h3><i class="fab fa-meta"></i> لماذا تركزون على إعلانات ميتا؟</h3><p>لأن فيسبوك وإنستغرام يسمحان باستهداف دقيق جداً للمحامين لا يتوفر في أي منصة أخرى. نستطيع استهداف الأشخاص حسب المهنة، الاهتمامات القانونية، وحتى التفاعل مع صفحات منافسة.</p></div>
-    <div class="faq-item"><h3><i class="fas fa-coins"></i> كم تكلفة بناء المنظومة؟</h3><p>نقدم حلولاً مرنة. نناقش التفاصيل في الاستشارة المجانية ونقدم عرض سعر شفاف.</p></div>
-    <div class="faq-item"><h3><i class="fas fa-clock"></i> متى أرى النتائج؟</h3><p>خلال 30-45 يوماً من تشغيل المنظومة، يبدأ تدفق الاستشارات المؤهلة.</p></div>
-    <div class="faq-item"><h3><i class="fas fa-filter"></i> كيف تضمن جودة القضايا؟</h3><p>نظام تأهيل متعدد المراحل يصل إليك فقط العملاء الجادون ذوو الحاجة الحقيقية.</p></div>
+    <div class="faq-item animate-fade-up" style="transition-delay: 0.1s;"><h3><i class="fab fa-meta"></i> لماذا تركزون على إعلانات ميتا؟</h3><p>لأن فيسبوك وإنستغرام يسمحان باستهداف دقيق جداً للمحامين لا يتوفر في أي منصة أخرى. نستطيع استهداف الأشخاص حسب المهنة، الاهتمامات القانونية، وحتى التفاعل مع صفحات منافسة.</p></div>
+    <div class="faq-item animate-fade-up" style="transition-delay: 0.2s;"><h3><i class="fas fa-coins"></i> كم تكلفة بناء المنظومة؟</h3><p>نقدم حلولاً مرنة. نناقش التفاصيل في الاستشارة المجانية ونقدم عرض سعر شفاف.</p></div>
+    <div class="faq-item animate-fade-up" style="transition-delay: 0.3s;"><h3><i class="fas fa-clock"></i> متى أرى النتائج؟</h3><p>خلال 30-45 يوماً من تشغيل المنظومة، يبدأ تدفق الاستشارات المؤهلة.</p></div>
+    <div class="faq-item animate-fade-up" style="transition-delay: 0.4s;"><h3><i class="fas fa-filter"></i> كيف تضمن جودة القضايا؟</h3><p>نظام تأهيل متعدد المراحل يصل إليك فقط العملاء الجادون ذوو الحاجة الحقيقية.</p></div>
   </div>
 </section>
 
-<!-- قسم التواصل الاجتماعي -->
+<!-- ========== تواصل معنا ========== -->
 <section class="section" id="contact">
-  <h2 class="section-title"><i class="fas fa-envelope"></i> تواصل معنا</h2>
-  <div class="social-final">
+  <h2 class="section-title animate-fade-up"><i class="fas fa-envelope"></i> تواصل معنا</h2>
+  <div class="social-final animate-fade-up">
     <p><i class="fas fa-share-alt" style="margin-left: 8px;"></i> تابع حساباتنا الرسمية</p>
     <div class="social-icons">
-      <div class="social-icon-card">
-        <a href="https://www.instagram.com/lumora.growth.agency" target="_blank"><i class="fab fa-instagram"></i></a>
-        <span>الوكالة</span>
-      </div>
-      <div class="social-icon-card">
-        <a href="https://www.instagram.com/hatem_dayob" target="_blank"><i class="fas fa-user-tie"></i></a>
-        <span>المؤسس</span>
-      </div>
+      <div class="social-icon-card"><a href="https://www.instagram.com/lumora.growth.agency" target="_blank"><i class="fab fa-instagram"></i></a><span>الوكالة</span></div>
+      <div class="social-icon-card"><a href="https://www.instagram.com/hatem_dayob" target="_blank"><i class="fas fa-user-tie"></i></a><span>المؤسس</span></div>
     </div>
-    <div style="margin-top: 25px;">
-      <strong style="color:#d4af37; text-shadow:0 0 8px rgba(212,175,55,0.3);">حاتم ديوب</strong> - مؤسس Lumora
-    </div>
+    <div style="margin-top: 25px;"><strong style="color:#d4af37; text-shadow:0 0 8px rgba(212,175,55,0.3);">حاتم ديوب</strong> - مؤسس Lumora</div>
   </div>
 </section>
 
-<!-- الفوتر -->
+<!-- ========== الفوتر ========== -->
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-col"><h4>Lumora Agency</h4><p>متخصصون في إعلانات ميتا الاحترافية للمحامين. نبني منظومات متكاملة لجلب القضايا.</p></div>
@@ -357,7 +493,7 @@
   <div class="footer-bottom">© 2025 Lumora Growth Agency - جميع الحقوق محفوظة</div>
 </footer>
 
-<!-- نافذة الاستشارة -->
+<!-- ========== نافذة الاستشارة ========== -->
 <div class="modal-overlay" id="consultationModal">
   <div class="modal-content">
     <button class="modal-close" onclick="closeConsultationModal()"><i class="fas fa-times"></i></button>
@@ -368,25 +504,9 @@
       <form class="modal-form" id="modalForm">
         <input type="text" id="modalName" placeholder="الاسم الكامل *" required>
         <input type="text" id="modalFirm" placeholder="اسم مكتب المحاماة *" required>
-        <select id="modalSpecialty" required>
-          <option value="">التخصص القانوني *</option>
-          <option>قضايا الأسرة</option><option>الهجرة والجنسية</option><option>الإصابات والحوادث</option>
-          <option>القضايا الجنائية</option><option>قانون الشركات</option><option>تجاري وعقود</option><option>قانون العمل</option><option>آخر</option>
-        </select>
+        <select id="modalSpecialty" required><option value="">التخصص القانوني *</option><option>قضايا الأسرة</option><option>الهجرة والجنسية</option><option>الإصابات والحوادث</option><option>القضايا الجنائية</option><option>قانون الشركات</option><option>تجاري وعقود</option><option>قانون العمل</option><option>آخر</option></select>
         <input type="text" id="modalCountry" placeholder="الدولة / المدينة *" required>
-        <div class="phone-group">
-          <select id="countryCode">
-            <option value="+966">🇸🇦 السعودية +966</option><option value="+20">🇪🇬 مصر +20</option><option value="+971">🇦🇪 الإمارات +971</option>
-            <option value="+974">🇶🇦 قطر +974</option><option value="+965">🇰🇼 الكويت +965</option><option value="+968">🇴🇲 عمان +968</option>
-            <option value="+973">🇧🇭 البحرين +973</option><option value="+962">🇯🇴 الأردن +962</option><option value="+961">🇱🇧 لبنان +961</option>
-            <option value="+963">🇸🇾 سوريا +963</option><option value="+970">🇵🇸 فلسطين +970</option><option value="+964">🇮🇶 العراق +964</option>
-            <option value="+967">🇾🇪 اليمن +967</option><option value="+216">🇹🇳 تونس +216</option><option value="+213">🇩🇿 الجزائر +213</option>
-            <option value="+212">🇲🇦 المغرب +212</option><option value="+218">🇱🇾 ليبيا +218</option><option value="+249">🇸🇩 السودان +249</option>
-            <option value="+252">🇸🇴 الصومال +252</option><option value="+90">🇹🇷 تركيا +90</option><option value="+44">🇬🇧 بريطانيا +44</option>
-            <option value="+1">🇺🇸 أمريكا +1</option>
-          </select>
-          <input type="tel" id="modalPhone" placeholder="رقم الهاتف *" required>
-        </div>
+        <div class="phone-group"><select id="countryCode"><option value="+966">🇸🇦 السعودية +966</option><option value="+20">🇪🇬 مصر +20</option><option value="+971">🇦🇪 الإمارات +971</option><option value="+974">🇶🇦 قطر +974</option><option value="+965">🇰🇼 الكويت +965</option><option value="+968">🇴🇲 عمان +968</option><option value="+973">🇧🇭 البحرين +973</option><option value="+962">🇯🇴 الأردن +962</option><option value="+961">🇱🇧 لبنان +961</option><option value="+963">🇸🇾 سوريا +963</option><option value="+970">🇵🇸 فلسطين +970</option><option value="+964">🇮🇶 العراق +964</option><option value="+967">🇾🇪 اليمن +967</option><option value="+216">🇹🇳 تونس +216</option><option value="+213">🇩🇿 الجزائر +213</option><option value="+212">🇲🇦 المغرب +212</option><option value="+218">🇱🇾 ليبيا +218</option><option value="+249">🇸🇩 السودان +249</option><option value="+252">🇸🇴 الصومال +252</option><option value="+90">🇹🇷 تركيا +90</option><option value="+44">🇬🇧 بريطانيا +44</option><option value="+1">🇺🇸 أمريكا +1</option></select><input type="tel" id="modalPhone" placeholder="رقم الهاتف *" required></div>
         <input type="email" id="modalEmail" placeholder="البريد الإلكتروني *" required>
         <button type="submit" class="btn-modal-submit" id="modalSubmitBtn"><i class="fas fa-paper-plane"></i> أرسل الطلب</button>
       </form>
@@ -402,98 +522,42 @@
   const caseDisplay = document.getElementById('caseValueDisplay');
   const casesDisplay = document.getElementById('monthlyCasesDisplay');
   const roiSpan = document.getElementById('roiResult');
-  function updateROI() { 
-    let val = parseInt(caseSlider.value) * parseInt(casesSlider.value); 
-    caseDisplay.innerText = parseInt(caseSlider.value).toLocaleString(); 
-    casesDisplay.innerText = casesSlider.value; 
-    roiSpan.innerText = '$' + val.toLocaleString(); 
-  }
+  function updateROI() { let val = parseInt(caseSlider.value) * parseInt(casesSlider.value); caseDisplay.innerText = parseInt(caseSlider.value).toLocaleString(); casesDisplay.innerText = casesSlider.value; roiSpan.innerText = '$' + val.toLocaleString(); }
   caseSlider.addEventListener('input', updateROI);
   casesSlider.addEventListener('input', updateROI);
   updateROI();
 
-  // القائمة الجانبية
-  function openSideMenu() { 
-    document.getElementById('sideMenu').classList.add('open'); 
-    document.getElementById('overlay').style.display = 'block'; 
-    document.body.style.overflow = 'hidden'; 
-  }
-  function closeSideMenu() { 
-    document.getElementById('sideMenu').classList.remove('open'); 
-    document.getElementById('overlay').style.display = 'none'; 
-    document.body.style.overflow = ''; 
-  }
+  // أنيماشن السكرول
+  const animateElements = document.querySelectorAll('.animate-fade-up, .animate-fade-left, .animate-fade-right, .animate-scale');
+  const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
+  animateElements.forEach(el => observer.observe(el));
 
-  // النوافذ
-  function openConsultationModal() { 
-    document.getElementById('consultationModal').style.display = 'flex'; 
-    document.body.style.overflow = 'hidden'; 
-    document.getElementById('modalFormContainer').style.display = 'block'; 
-    document.getElementById('successMessage').style.display = 'none'; 
-    document.getElementById('modalForm').reset(); 
-  }
-  function closeConsultationModal() { 
-    document.getElementById('consultationModal').style.display = 'none'; 
-    document.body.style.overflow = ''; 
-  }
+  // تغيير النافبار عند السكرول
+  window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50); });
 
-  // إغلاق المودال عند الضغط على الخلفية
-  document.getElementById('consultationModal').addEventListener('click', function(e) {
-    if (e.target === this) closeConsultationModal();
-  });
+  function openSideMenu() { document.getElementById('sideMenu').classList.add('open'); document.getElementById('overlay').style.display = 'block'; document.body.style.overflow = 'hidden'; }
+  function closeSideMenu() { document.getElementById('sideMenu').classList.remove('open'); document.getElementById('overlay').style.display = 'none'; document.body.style.overflow = ''; }
+  function openConsultationModal() { document.getElementById('consultationModal').style.display = 'flex'; document.body.style.overflow = 'hidden'; document.getElementById('modalFormContainer').style.display = 'block'; document.getElementById('successMessage').style.display = 'none'; document.getElementById('modalForm').reset(); }
+  function closeConsultationModal() { document.getElementById('consultationModal').style.display = 'none'; document.body.style.overflow = ''; }
+  document.getElementById('consultationModal').addEventListener('click', function(e) { if (e.target === this) closeConsultationModal(); });
 
-  // إرسال تلغرام
   const BOT_TOKEN = '8982213234:AAH91SBn9kmb-2tdRz9vXKS96WguzuNpK_w';
   const CHAT_ID = '8083212251';
   document.getElementById('modalForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = document.getElementById('modalSubmitBtn');
     const original = btn.innerHTML;
-    btn.disabled = true; 
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
-    
+    btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
     const countryCode = document.getElementById('countryCode').value;
     const phoneNumber = document.getElementById('modalPhone').value.trim();
     const fullPhone = countryCode + phoneNumber;
-    const data = { 
-      name: document.getElementById('modalName').value, 
-      firm: document.getElementById('modalFirm').value, 
-      specialty: document.getElementById('modalSpecialty').value, 
-      country: document.getElementById('modalCountry').value, 
-      phone: fullPhone, 
-      email: document.getElementById('modalEmail').value 
-    };
-    
+    const data = { name: document.getElementById('modalName').value, firm: document.getElementById('modalFirm').value, specialty: document.getElementById('modalSpecialty').value, country: document.getElementById('modalCountry').value, phone: fullPhone, email: document.getElementById('modalEmail').value };
     const msg = `🔥 *طلب استشارة جديد (Lumora)*\n\n━━━━━━━━━━━━━━━━━━\n👤 *الاسم:* ${data.name}\n🏛️ *المكتب:* ${data.firm}\n⚖️ *التخصص:* ${data.specialty}\n🌍 *الدولة:* ${data.country}\n📞 *الهاتف:* ${data.phone}\n📧 *الإيميل:* ${data.email}\n━━━━━━━━━━━━━━━━━━\n📅 ${new Date().toLocaleString('ar-SA')}\n🎯 _Lumora Growth Agency_`;
-    
-    try { 
-      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, { 
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/json' }, 
-        body: JSON.stringify({ chat_id: CHAT_ID, text: msg, parse_mode: 'Markdown' }) 
-      }); 
-      document.getElementById('modalFormContainer').style.display = 'none'; 
-      document.getElementById('successMessage').style.display = 'block'; 
-      setTimeout(closeConsultationModal, 4000); 
-    } catch(err) { 
-      alert('❌ حدث خطأ. يرجى التواصل عبر الواتساب.'); 
-      btn.disabled = false; 
-      btn.innerHTML = original; 
-    }
+    try { await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: CHAT_ID, text: msg, parse_mode: 'Markdown' }) }); document.getElementById('modalFormContainer').style.display = 'none'; document.getElementById('successMessage').style.display = 'block'; setTimeout(closeConsultationModal, 4000); } catch(err) { alert('❌ حدث خطأ. يرجى التواصل عبر الواتساب.'); btn.disabled = false; btn.innerHTML = original; }
   });
 
-  // ترجمة مبسطة
   let isArabic = true;
-  function toggleLanguage() { 
-    if(isArabic) { 
-      document.documentElement.dir = 'ltr'; 
-      document.querySelectorAll('.lang-toggle').forEach(el => el.innerHTML = 'العربية');
-      isArabic = false; 
-      location.reload(); 
-    } else { 
-      location.reload(); 
-    } 
-  }
+  function toggleLanguage() { if(isArabic) { document.documentElement.dir = 'ltr'; document.querySelectorAll('.lang-toggle').forEach(el => el.innerHTML = 'العربية'); isArabic = false; location.reload(); } else { location.reload(); } }
 </script>
 </body>
-      </html>
+</html>
